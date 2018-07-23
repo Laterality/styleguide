@@ -58,21 +58,20 @@
 <li><p>탭 문자는 들여쓰기에 사용하지 <strong>않습니다</strong>.</p></li>
 </ol>
 
-<h4 id="special-escape-sequences">2.3.2 Special escape sequences</h4>
+<h4 id="special-escape-sequences">2.3.2 특수 이스케이프 시퀀스</h4>
 
-<p>For any character that has a special escape sequence (<code>\'</code>, <code>\"</code>, <code>\\</code>, <code>\b</code>,
-<code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>), that sequence is used rather than the
-corresponding numeric escape (e.g <code>\x0a</code>, <code>\u000a</code>, or <code>\u{a}</code>). Legacy octal
-escapes are never used.</p>
+<p>특수 이스케이프 시퀀스 (<code>\'</code>, <code>\"</code>, <code>\\</code>,
+<code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>,
+<code>\t</code>, <code>\v</code>)를 가진 임의의 문자에 대해, 그 시퀀스는 대응되는 숫자 이스케이프 대신 사용됩니다 (e.g <code>\x0a</code>, <code>\u000a</code>, 혹은 <code>\u{a}</code>). 기존의 8진수 이스케이프는 절대 사용되지 않습니다.</p>
 
-<h4 id="non-ascii-characters">2.3.3 Non-ASCII characters</h4>
+<h4 id="non-ascii-characters">2.3.3 Non ASCII 문자</h4>
 
-<p>For the remaining non-ASCII characters, either the actual Unicode character
-(e.g. <code>&#8734;</code>) or the equivalent hex or Unicode escape (e.g. <code>\u221e</code>) is used,
-depending only on which makes the code <strong>easier to read and understand</strong>.</p>
+<p>Non ASCII 문자를 남겨두기 위해서는, 어느 쪽이 코드를 더
+<strong>읽고 이해하기 쉽게</strong> 만드는지에 따라 실제 유니코드 문자
+(e.g. <code>&#8734;</code>) 혹은 동등한 16진수나 유니코드 이스케이프
+(e.g. <code>\u221e</code>)가 사용됩니다.</p>
 
-<p>Tip: In the Unicode escape case, and occasionally even when actual Unicode
-characters are used, an explanatory comment can be very helpful.</p>
+<p>팁: 유니코드 이스케이프를 사용하는 경우와, 심지어 실제 유니코드 문자를 사용하는 경우에도, 이를 설명하는 주석은 매우 유용할 수 있습니다.</p>
 
 <table>
   <thead>
@@ -82,32 +81,29 @@ characters are used, an explanatory comment can be very helpful.</p>
   </th></tr></thead><tbody>
     <tr>
       <td><code class="prettyprint lang-js">const units = '&#956;s';</code>
-      </td><td>Best: perfectly clear even without a comment.
+      </td><td>Best: 주석이 없어도 완벽하게 깔끔합니다.
     </td></tr><tr>
       <td>
         <code class="prettyprint lang-js">const units = '\u03bcs'; // '&#956;s'
         </code>
-      </td><td>Allowed, but there&#8217;s no reason to do this.
+      </td><td>허용되지만, 이렇게 할 이유는 없습니다.
     </td></tr><tr>
       <td>
         <code class="prettyprint lang-js">const units = '\u03bcs'; // Greek letter mu, 's'
         </code>
-      </td><td>Allowed, but awkward and prone to mistakes.
+      </td><td>허용되지만, 어색하고 실수할 여지가 있습니다.
     </td></tr><tr>
       <td><code class="badcode">const units = '\u03bcs';</code>
-      </td><td>Poor: the reader has no idea what this is.
+      </td><td>Poor: 읽는 사람은 뭔지 전혀 모릅니다.
     </td></tr><tr>
       <td>
         <code class="prettyprint lang-js">return '\ufeff' + content;  // byte order mark
         </code>
       </td><td>
-        Good: use escapes for non-printable characters, and comment if
-        necessary.
+        Good: 비 출력 문자를 위해 이스케이프를 사용하고, 필요한 경우 주석을 추가하십시오.
 </td></tr></tbody></table>
 
-<p>Tip: Never make your code less readable simply out of fear that some programs
-might not handle non-ASCII characters properly. If that happens, those programs
-are <strong>broken</strong> and they must be <strong>fixed</strong>.</p>
+<p>팁: 절대로 프로그램이 non ASCII 문자를 적절히 처리하지 못할 거라는 두려움 때문에 쉽게 코드의 가독성을 떨어뜨리지 마십시오. 만약 그런 일이 발생한다면, 그런 프로그램은 <strong>고장</strong>날 것이고, <strong>고쳐져</strong>야 합니다.</p>
 
 <h2 id="source-file-structure">3 Source file structure</h2>
 
