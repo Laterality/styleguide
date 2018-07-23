@@ -36,29 +36,26 @@
 
 <p>이 문서의 예시 코드는 <strong>비표준</strong>입니다. 즉, 예시들이 구글 스타일이어도 그 코드를 대표하는 <em>유일하게</em> 우아한 방법을 설명하는 것이 아닐 수 있습니다. 예시에서 사용된 선택 사항의 서식은 규칙으로서 강요되서는 안됩니다.</p>
 
-<h2 id="source-file-basics">2 Source file basics</h2>
+<h2 id="source-file-basics">2 소스 파일 기본</h2>
 
-<h3 id="file-name">2.1 File name</h3>
+<h3 id="file-name">2.1 파일명</h3>
 
-<p>File names must be all lowercase and may include underscores (<code>_</code>) or dashes
-(<code>-</code>), but no additional punctuation. Follow the convention that your project
-uses. Filenames&#8217; extension must be <code>.js</code>.</p>
+<p>파일명은 모두 소문자이며 언더스코어(<code>_</code>) 혹은 대시(<code>-</code>)
+를 포함할 수도 있지만, 다른 구두점은 사용할 수 없습니다. 프로젝트에서 사용하는 관례를 따르십시오. 파일명의 확장자는 <code>.js</code>여야 합니다.</p>
 
-<h3 id="file-encoding">2.2 File encoding: UTF-8</h3>
+<h3 id="file-encoding">2.2 파일 인코딩: UTF-8</h3>
 
-<p>Source files are encoded in <strong>UTF-8</strong>.</p>
+<p>소스 파일은 <strong>UTF-8</strong>로 인코딩됩니다.</p>
 
-<h3 id="special-characters">2.3 Special characters</h3>
+<h3 id="special-characters">2.3 특수 문자</h3>
 
-<h4 id="whitespace-characters">2.3.1 Whitespace characters</h4>
+<h4 id="whitespace-characters">2.3.1 공백 문자</h4>
 
-<p>Aside from the line terminator sequence, the ASCII horizontal space character
-(0x20) is the only whitespace character that appears anywhere in a source
-file. This implies that</p>
+<p>라인 종걸 시퀀스를 제외하고, ASCII 수평 공백 문자(0x20)만이 소스 파일 어느 곳에서나 나타나는 유일한 공백 문자입니다. 이는 다음을 의미합니다</p>
 
 <ol>
-<li><p>All other whitespace characters in string literals are escaped, and</p></li>
-<li><p>Tab characters are <strong>not</strong> used for indentation.</p></li>
+<li><p>문자열 리터럴에 있는 모든 공백 문자는 이스케이프 되며,</p></li>
+<li><p>탭 문자는 들여쓰기에 사용하지 <strong>않습니다</strong>.</p></li>
 </ol>
 
 <h4 id="special-escape-sequences">2.3.2 Special escape sequences</h4>
