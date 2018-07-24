@@ -105,41 +105,35 @@
 
 <p>팁: 절대로 프로그램이 non ASCII 문자를 적절히 처리하지 못할 거라는 두려움 때문에 쉽게 코드의 가독성을 떨어뜨리지 마십시오. 만약 그런 일이 발생한다면, 그런 프로그램은 <strong>고장</strong>날 것이고, <strong>고쳐져</strong>야 합니다.</p>
 
-<h2 id="source-file-structure">3 Source file structure</h2>
+<h2 id="source-file-structure">3 소스 파일 구조</h2>
 
-<p>A source file consists of, <strong>in order</strong>:</p>
+<p>소스 파일은 다음 <strong>순서대로</strong> 구성됩니다:</p>
 
 <ol>
-<li>License or copyright information, if present</li>
-<li><code>@fileoverview</code> JSDoc, if present</li>
-<li><code>goog.module</code> statement</li>
-<li><code>goog.require</code> statements</li>
-<li>The file&#8217;s implementation</li>
+<li>라이센스 혹은 저작권 정보(있는 경우)</li>
+<li><code>@fileoverview</code> JSDoc(있는 경우)</li>
+<li><code>goog.module</code>문</li>
+<li><code>goog.require</code>문</li>
+<li>파일의 구현부</li>
 </ol>
 
-<p><strong>Exactly one blank line</strong> separates each section that is present, except the
-file's implementation, which may be preceded by 1 or 2 blank lines.</p>
+<p>1개 혹은 2개의 빈 줄이 올 수 있는 파일의 구현부를 제외하고, <strong>정확히 하나의 빈 줄이</strong> 각 섹션을 구분합니다.</p>
 
-<h3 id="file-copyright">3.1 License or copyright information, if present</h3>
+<h3 id="file-copyright">3.1 라이센스 혹은 저작권 정보(있는 경우)</h3>
 
-<p>If license or copyright information belongs in a file, it belongs here.</p>
+<p>파일에 라이센스 혹은 라이센스 정보가 들어가는 경우, 여기에 속합니다.</p>
 
-<h3 id="file-fileoverview">3.2 <code>@fileoverview</code> JSDoc, if present</h3>
+<h3 id="file-fileoverview">3.2 <code>@fileoverview</code> JSDoc(있는 경우)</h3>
 
-<p>See <a href="#jsdoc-top-file-level-comments">??</a> for formatting rules.</p>
+<p>서식 규칙에 대해서는 <a href="#jsdoc-top-file-level-comments">??</a>을 보시기 바랍니다.</p>
 
-<h3 id="file-goog-module">3.3 <code>goog.module</code> statement</h3>
+<h3 id="file-goog-module">3.3 <code>goog.module</code>문</h3>
 
-<p>All files must declare exactly one <code>goog.module</code> name on a single line: lines
-containing a <code>goog.module</code> declaration must not be wrapped, and are therefore an
-exception to the 80-column limit.</p>
+<p>모든 파일은 한 줄에 정확히 하나의 <code>goog.module</code> 이름을 선언해야 합니다. <code>goog.module</code> 선언은 포장되선 안되며, 따라서 80자 제한에 예외로 합니다.</p>
 
-<p>The entire argument to goog.module is what defines a namespace.  It is the
-package name (an identifier that reflects the fragment of the directory
-structure where the code lives) plus, optionally, the main class/enum/interface
-that it defines concatenated to the end.</p>
+<p>네임스페이스를 정의하는 것은 goog.module에 대한 전체 인자입니다. 이는 패키지 명(코드가 존재하는 디렉터리 구조의 조각을 반영한 식별자) + 선택적으로 패키지가 정의하는 메인 클래스/열거형/인터페이스를 끝에 연결합니다. The entire argument to goog.module is what defines a namespace.</p>
 
-<p>Example</p>
+<p>예시</p>
 
 <pre><code class="language-js prettyprint">goog.module('search.urlHistory.UrlHistoryService');
 </code></pre>
