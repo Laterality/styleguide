@@ -138,21 +138,17 @@
 <pre><code class="language-js prettyprint">goog.module('search.urlHistory.UrlHistoryService');
 </code></pre>
 
-<h4 id="naming-hierarchy">3.3.1 Hierarchy</h4>
+<h4 id="naming-hierarchy">3.3.1 계층</h4>
 
-<p>Module namespaces may never be named as a <em>direct</em> child of another module's
-namespace.</p>
+<p>모듈 네임스페이스는 다른 모듈 네임스페이스의 <em>자식(direct child)</em>로 명명될 수 없습니다.</p>
 
-<p>Illegal:</p>
+<p>옳지 않은 예:</p>
 
 <pre><code class="language-js prettyprint badcode">goog.module('foo.bar');   // 'foo.bar.qux' would be fine, though
 goog.module('foo.bar.baz');
 </code></pre>
 
-<p>The directory hierarchy reflects the namespace hierarchy, so that deeper-nested
-children are subdirectories of higher-level parent directories.  Note that this
-implies that owners of &#8220;parent&#8221; namespace groups are necessarily aware of all
-child namespaces, since they exist in the same directory.</p>
+<p>디렉터리 계층은 네임스페이스 계층을 반영하기 때문에, 더 깊게 중첩된 자식들은 더 높은 수준의 부모 디렉터리의 서브디렉터리입니다. &#8220;부모&#8221; 네임스페이스 그룹은 같은 디렉터리에 있게 된 순간부터 모든 자식 네임스페이스를 알고 있음을 의미한다는 것을 알아두십시오.</p>
 
 <h4 id="file-set-test-only">3.3.2 <code>goog.setTestOnly</code></h4>
 
