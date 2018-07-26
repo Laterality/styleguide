@@ -152,29 +152,26 @@ goog.module('foo.bar.baz');
 
 <h4 id="file-set-test-only">3.3.2 <code>goog.setTestOnly</code></h4>
 
-<p>The single <code>goog.module</code> statement may optionally be followed by a call to
-goog.setTestOnly().</p>
+<p>하나의 <code>goog.module</code>문은 선택적으로 goog.setTestOnly() 호출에
+따라올 수 있습니다.</p>
 
 <h4 id="file-declare-legacy-namespace">3.3.3 <code>goog.module.declareLegacyNamespace</code></h4>
 
-<p>The single <code>goog.module</code> statement may optionally be followed by a call to
-<code>goog.module.declareLegacyNamespace();</code>. Avoid
-<code>goog.module.declareLegacyNamespace()</code> when possible.</p>
+<p>하나의 <code>goog.module</code>문은
+<code>goog.module.declareLegacyNamespace();</code> 호출에 따라올 수 있습니다.
+가능하면<code>goog.module.declareLegacyNamespace()</code>은 피하십시오.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">goog.module('my.test.helpers');
 goog.module.declareLegacyNamespace();
 goog.setTestOnly();
 </code></pre>
 
-<p><code>goog.module.declareLegacyNamespace</code> exists to ease the transition from
-traditional object hierarchy-based namespaces but comes with some naming
-restrictions. As the child module name must be created after the parent
-namespace, this name <strong>must not</strong> be a child or parent of any other
-<code>goog.module</code> (for example, <code>goog.module('parent');</code> and
-<code>goog.module('parent.child');</code> cannot both exist safely, nor can
-<code>goog.module('parent');</code> and <code>goog.module('parent.child.grandchild');</code>).</p>
+<p><code>goog.module.declareLegacyNamespace</code>은 기존의 객체 계층 기반 네임 스페이스로부터의 전환을 용이하게 하기 위해 존재하지만 몇 가지 명명에 제한이 있습니다. 자식 모듈 이름은 부모 네임스페이스 뒤에 생성되어야 하므로 이 이름은 <code>goog.module</code>의 하위 혹은 상위 이름이 될 수 없습니다(예를 들어, <code>goog.module('parent');</code> 와
+<code>goog.module('parent.child');</code> 모두 안전하게 존재할 수 없으며,
+<code>goog.module('parent');</code>와 <code>goog.module
+('parent.child.grandchild');</code> 또한 마찬가지입니다).</p>
 
 <h4 id="file-es6-modules">3.3.4 ES6 Modules</h4>
 
