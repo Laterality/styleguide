@@ -173,48 +173,41 @@ goog.setTestOnly();
 <code>goog.module('parent');</code>와 <code>goog.module
 ('parent.child.grandchild');</code> 또한 마찬가지입니다).</p>
 
-<h4 id="file-es6-modules">3.3.4 ES6 Modules</h4>
+<h4 id="file-es6-modules">3.3.4 ES6 모듈</h4>
 
-<p>Do not use ES6 modules yet (i.e. the <code>export</code> and <code>import</code> keywords), as their
-semantics are not yet finalized. Note that this policy will be revisited once
-the semantics are fully-standard.</p>
+<p>의미가 아직 완전하지 않기 때문에, 아직은 (<code>export</code>와
+<code>import</code> 키워드와 같은) ES6 모듈을 사용하지 마십시오. 의미가 완전히 표준이 되면 이 정책은 다시 한번 확인하시기 바랍니다.</p>
 
-<h3 id="file-goog-require">3.4 <code>goog.require</code> statements</h3>
+<h3 id="file-goog-require">3.4 <code>goog.require</code>문</h3>
 
-<p>Imports are done with <code>goog.require</code> statements, grouped together immediately
-following the module declaration. Each <code>goog.require</code> is assigned to a single
-constant alias, or else destructured into several constant aliases. These
-aliases are the only acceptable way to refer to the <code>require</code>d dependency,
-whether in code or in type annotations: the fully qualified name is never used
-except as the argument to <code>goog.require</code>. Alias names should match the final
-dot-separated component of the imported module name when possible, though
-additional components may be included (with appropriate casing such that the
-alias' casing still correctly identifies its type) if necessary to
-disambiguate, or if it significantly improves readability. <code>goog.require</code>
-statements may not appear anywhere else in the file.</p>
+<p>모듈 선언 직후 그룹화된 <code>goog.require</code>문으로
+임포트를 수행합니다. 각 <code>goog.require</code>은 하나의 상수
+볆명(alias)에 대입되거나, 여러 개의 상수 별칭으로 destructure
+됩니다. 이러한 별칭은 코드는 타입 표기에서 <code>require</code>된
+의존성을 참조할 수 있는 유일한 방법입니다. <code>goog.require</code>에 대한 인자를 제외하고 전체 이름은
+사용되지 않습니다. 별칭 이름은 가능하면 임포트된 모듈의 마지막
+점-구분 컴포넌트와 일치해야 합니다. 단, 차이를 분명히 구분해야
+하거나 명확하게 가독성을 향상시키는 경우, 추가 컴포넌트가(올바르게
+별칭의 타입을 구분하는 적절한 대소문자 구분으로) 포함될 수
+있습니다. <code>goog.require</code>문은 이 파일 다른 곳에서는 등장하지 않을 수 있습니다.</p>
 
-<p>If a module is imported only for its side effects, the assignment may be
-omitted, but the fully qualified name may not appear anywhere else in the file.
-A comment is required to explain why this is needed and suppress a compiler
-warning.</p>
+<p>만약 모듈이 부수 효과(side effect)만을 위해 임포트되었다면
+대입이 생략될 수 있지만, 전체 이름이 파일의 다른 곳에 등장하지 않을 수 있습니다. 
+주석은 이것이 왜 필요하고 컴파일러 경고를 무시해야 하는 지 설명하기 위해 필요합니다.</p>
 
 
 
-<p>The lines are sorted according to the following rules: All requires with a name
-on the left hand side come first, sorted alphabetically by those names. Then
-destructuring requires, again sorted by the names on the left hand side.
-Finally, any <code>goog.require</code> calls that are standalone (generally these are for
-modules imported just for their side effects).</p>
+<p>줄은 다음의 규칙에 따라 정렬됩니다. 왼쪽에 이름이 있는
+(별칭에 대입되는) require가 첫 번째이며, 그 이름들에 따라 알파벳 순으로
+정렬됩니다. 그 다음 destructure된 require가 다시 한번 왼쪽의 이름으로 정렬됩니다.
+마지막으로, 임의의 단독 <code>goog.require</code> 호출이 위치합니다(일반적으로 이들은 오직 부수 효과만을 위해 임포트되는 모듈을 위한것입니다).</p>
 
-<p>Tip: There&#8217;s no need to memorize this order and enforce it manually. You can
-rely on your IDE to report requires
-that are not sorted correctly.</p>
+<p>팁: 순서를 기억하고 정렬하는 일을 직접 할 필요는 없습니다. IDE가
+올바르게 정렬되지 않은 require를 보고하도록 할 수 있습니다.</p>
 
-<p>If a long alias or module name would cause a line to exceed the 80-column limit,
-it <strong>must not</strong> be wrapped: goog.require lines are an exception to the 80-column
-limit.</p>
+<p>만약 긴 별칭 혹은 모듈 이름이 80자 제한을 초과한다면, 이는 포장되서는 <strong>안됩니다</strong>. goog.require 줄은 80자 제한에서 예외입니다.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">const MyClass = goog.require('some.package.MyClass');
 const NsMyClass = goog.require('other.ns.MyClass');
@@ -226,7 +219,7 @@ const {clear, forEach, map} = goog.require('goog.array');
 goog.require('my.framework.initialization');
 </code></pre>
 
-<p>Illegal:</p>
+<p>나쁜 예:</p>
 
 <pre><code class="language-js badcode prettyprint">const randomName = goog.require('something.else'); // name must match
 
