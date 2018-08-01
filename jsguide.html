@@ -270,22 +270,21 @@ for (let i = 0; i &lt; foo.length; i++) bar(foo[i]);
 <pre><code class="language-js prettyprint">if (shortCondition()) return;
 </code></pre>
 
-<h4 id="formatting-nonempty-blocks">4.1.2 Nonempty blocks: K&amp;R style</h4>
+<h4 id="formatting-nonempty-blocks">4.1.2 비어있지 않은 블럭: K&amp;R 스타일</h4>
 
-<p>Braces follow the Kernighan and Ritchie style (<q><a href="http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html">Egyptian brackets</a></q>) for
-<em>nonempty</em> blocks and block-like constructs:</p>
+<p><em>비어있지 않은</em> 블럭과 블럭 같은 구조의 중괄호는 Kernighan and Ritchie 스타일(<q><a href="http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html">Egyptian brackets</a></q>)을 따릅니다:</p>
 
 <ul>
-<li>No line break before the opening brace.</li>
-<li>Line break after the opening brace.</li>
-<li>Line break before the closing brace.</li>
-<li>Line break after the closing brace <em>if</em> that brace terminates a statement or
-the body of a function or class statement, or a class method. Specifically,
-there is <em>no</em> line break after the brace if it is followed by <code>else</code>, <code>catch</code>,
-<code>while</code>, or a comma, semicolon, or right-parenthesis.</li>
+<li>여는 중괄호 앞에서 개행하지 않습니다.</li>
+<li>여는 중괄호 뒤에서 개행합니다.</li>
+<li>닫는 중괄호 앞에서 개행합니다.</li>
+<li><em>만약</em> 닫는 중괄호가 구문(statement) 혹은 함수나 클래스의 몸체 혹은
+클래스 메서드 구문을 끝내는 경우 닫는 중괄호 뒤에서 개행합니다. 구체적으로,
+<code>else</code>, <code>catch</code>, <code>while</code>, 혹은 쉽표, 세미콜론,
+혹은 닫는 소괄호가 뒤에 따르는 경우, 개행하지 <em>않</em>습니다.</li>
 </ul>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">class InnerClass {
   constructor() {}
