@@ -303,14 +303,15 @@ for (let i = 0; i &lt; foo.length; i++) bar(foo[i]);
 }
 </code></pre>
 
-<h4 id="formatting-empty-blocks">4.1.3 Empty blocks: may be concise</h4>
+<h4 id="formatting-empty-blocks">4.1.3 빈 블럭: 갈결할 수 있음</h4>
 
-<p>An empty block or block-like construct <em>may</em> be closed immediately after it is
-opened, with no characters, space, or line break in between (i.e. <code>{}</code>),
-<strong>unless</strong> it is a part of a <em>multi-block statement</em> (one that directly contains
-multiple blocks: <code>if</code>/<code>else</code> or <code>try</code>/<code>catch</code>/<code>finally</code>).</p>
+<p><em>다중 블럭 구문</em>(다중 블럭을 직접 포함하는 것: 
+<code>if</code>/<code>else</code> 혹은
+<code>try</code>/<code>catch</code>/<code>finally</code>)의 일부가
+<em>아닌 이상</em>, 빈 블럭이나 블럭 같은 구조는 사이에 문자, 공백, 개행 없이
+열린 즉시 닫힐 <em>수</em> 있습니다(즉, <code>{}</code>).</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">function doNothing() {}
 </code></pre>
