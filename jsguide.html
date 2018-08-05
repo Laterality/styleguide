@@ -379,15 +379,14 @@ someMethod(foo, {
 }, bar);
 </code></pre>
 
-<h4 id="formatting-class-literals">4.2.3 Class literals</h4>
+<h4 id="formatting-class-literals">4.2.3 클래스 리터럴</h4>
 
-<p>Class literals (whether declarations or expressions) are indented as blocks. Do
-not add semicolons after methods, or after the closing brace of a class
-<em>declaration</em> (statements&#8212;such as assignments&#8212;that contain class <em>expressions</em>
-are still terminated with a semicolon). Use the <code>extends</code> keyword, but not the
-<code>@extends</code> JSDoc annotation unless the class extends a templatized type.</p>
+<p>클래스 리터럴(선언이든 표현식이든)은 블럭으로써 들여쓰기됩니다. 메서드
+끝이나 클래스 <em>선언</em>(대입(assignment)과 같이 클래스 <em>표현식</em>을
+포함하는 구문은 여전히 세미콜론으로 끝납니다)의 닫는 중괄호에 세미콜론을
+추가하지 마십시오. <code>extends</code> 키워드를 사용하되, 클래스가 템플릿화된 타입을 확장하는 것이 아니라면 <code>@extends</code> JSDoc 표기는 사용하지 마십시오.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint columns">class Foo {
   constructor() {
