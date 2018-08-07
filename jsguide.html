@@ -474,30 +474,28 @@ some.reallyLongFunctionCall(arg1, arg2, arg3)
 }
 </code></pre>
 
-<h3 id="formatting-statements">4.3 Statements</h3>
+<h3 id="formatting-statements">4.3 구문(statment)</h3>
 
-<h4 id="formatting-one-statement-perline">4.3.1 One statement per line</h4>
+<h4 id="formatting-one-statement-perline">4.3.1 한 줄에 한 구문 씩</h4>
 
-<p>Each statement is followed by a line-break.</p>
+<p>각 구문에는 개행이 뒤따릅니다.</p>
 
-<h4 id="formatting-semicolons-are-required">4.3.2 Semicolons are required</h4>
+<h4 id="formatting-semicolons-are-required">4.3.2 세미콜론 필수</h4>
 
-<p>Every statement must be terminated with a semicolon. Relying on automatic
-semicolon insertion is forbidden.</p>
+<p>모든 구문은 세미콜론으로 끝나야 합니다. 자동 세미콜론 삽입에 의존하는 것을 금합니다.</p>
 
-<h3 id="formatting-column-limit">4.4 Column limit: 80</h3>
+<h3 id="formatting-column-limit">4.4 열 제한: 80자</h3>
 
-<p>JavaScript code has a column limit of 80 characters. Except as noted below, any
-line that would exceed this limit must be line-wrapped, as explained in
-<a href="#formatting-line-wrapping">??</a>.</p>
+<p>Javascript 코드는 80자의 열 제한을 갖습니다. 아래에 나열된 경우를 제외하고,
+이를 초과하는 임의의 줄은 <a href="#formatting-line-wrapping">??</a>에 설명된
+것 처럼 라인-포장되어야 합니다.</p>
 
-<p><strong>Exceptions:</strong></p>
+<p><strong>예외:</strong></p>
 
 <ol>
-<li>Lines where obeying the column limit is not possible (for example, a long URL
-in JSDoc or a shell command intended to be copied-and-pasted).</li>
-<li><code>goog.module</code> and <code>goog.require</code> statements (see <a href="#file-goog-module">??</a> and
-<a href="#file-goog-require">??</a>).</li>
+<li>열 제한을 따를 수 없는 라인 (예를 들어, JSDoc에서 복사-붙여넣기를 위한 긴 URL 혹은 쉘 명령).</li>
+<li><code>goog.module</code>과 <code>goog.require</code> 구문 (<a href="#file-goog-module">??</a> 과
+<a href="#file-goog-require">??</a> 참조).</li>
 </ol>
 
 <h3 id="formatting-line-wrapping">4.5 Line-wrapping</h3>
