@@ -508,44 +508,38 @@ some.reallyLongFunctionCall(arg1, arg2, arg3)
 
 <p>팁: 메서드나 지역 변수를 추출해내는 것이 줄 포장할 필요 없이 문제를 해결할 수도 있습니다.</p>
 
-<h4 id="formatting-where-to-break">4.5.1 Where to break</h4>
+<h4 id="formatting-where-to-break">4.5.1 개행 위치</h4>
 
-<p>The prime directive of line-wrapping is: prefer to break at a <strong>higher syntactic
-level</strong>. </p>
+<p>줄 포장의 주요 지시 사항은 <strong>더 높은 구문 수준</strong>에서 개행하는 것을 선호한다는 것입니다. </p>
 
-<p>Preferred:</p>
+<p>선호:</p>
 
 <pre><code class="language-js prettyprint">currentEstimate =
     calc(currentEstimate + x * currentEstimate) /
         2.0f;
 </code></pre>
 
-<p>Discouraged:</p>
+<p>비선호:</p>
 
 <pre><code class="language-js prettyprint badcode">currentEstimate = calc(currentEstimate + x *
     currentEstimate) / 2.0f;
 </code></pre>
 
-<p>In the preceding example, the syntactic levels from highest to lowest are as
-follows: assignment, division, function call, parameters, number constant.</p>
+<p>앞선 예시에서, 가장 높은 구문 수준에서 가장 낮은 구문 수준은 다음과 같습니다: 대입, 나누기, 함수 호출, 매개변수, 숫자 상수.</p>
 
-<p>Operators are wrapped as follows:</p>
+<p>연산자는 다음과 같이 래핑됩니다:</p>
 
 <ol>
-<li>When a line is broken at an operator the break comes after the symbol. (Note
-that this is not the same practice used in Google style for Java.)
+<li>줄이 연산자에서 바뀌는 경우 개행은 기호 다음에 옵니다. (이는 Java에 대한 Google 스타일과 다른 관례라는 점을 기억하십시오.)
 <ol>
-<li>This does not apply to the <q>dot</q> (<code>.</code>), which is not actually an
-operator.</li>
+<li>이는 실질적으로 연산자가 아닌 <q>점</q>(<code>.</code>)에는 적용하지 않습니다.</li>
 </ol></li>
-<li>A method or constructor name stays attached to the open parenthesis (<code>(</code>)
-that follows it.</li>
-<li>A comma (<code>,</code>) stays attached to the token that precedes it.</li>
+<li>메서드 혹은 생성자 이름은 이에 따르는 여는 괄호(<code>(</code>)와 붙어 있습니다.</li>
+<li>쉼표(<code>,</code>)는 이에 앞서는 토큰과 붙어 있습니다.</li>
 </ol>
 
 <blockquote>
-<p>Note: The primary goal for line wrapping is to have clear code, not
-necessarily code that fits in the smallest number of lines.</p>
+<p>Note: 줄 포장의 우선 목표는 적은 줄에 불필요하게 코드를 맞추는 것이 아니라, 코드를 깔끔하게 하는 것입니다.</p>
 </blockquote>
 
 <h4 id="formatting-indent">4.5.2 Indent continuation lines at least +4 spaces</h4>
