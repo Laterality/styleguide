@@ -573,37 +573,29 @@ some.reallyLongFunctionCall(arg1, arg2, arg3)
 
 <p><em>복수의</em> 연이은 빈 줄은 허용되지만 필수는 아닙니다.</p>
 
-<h4 id="formatting-horizontal-whitespace">4.6.2 Horizontal whitespace</h4>
+<h4 id="formatting-horizontal-whitespace">4.6.2 수평 공백</h4>
 
-<p>Use of horizontal whitespace depends on location, and falls into three broad
-categories: <em>leading</em> (at the start of a line), <em>trailing</em> (at the end of a
-line), and <em>internal</em>.  Leading whitespace (i.e., indentation) is addressed
-elsewhere.  Trailing whitespace is forbidden.</p>
+<p>수평 공백의 사용은 위치에 따라 다르며, 3개의 카테고리로 분류됩니다:
+<em>앞서는 공백</em>(줄의 시작에), <em>따르는 공백</em>(줄의 끝에),
+<em>내부 공백</em>. 앞서는 공백(i.e. 들여쓰기)은 다른 곳에서 다뤄집니다.
+따르는 공백은 금지됩니다.</p>
 
-<p>Beyond where required by the language or other style rules, and apart from
-literals, comments, and JSDoc, a single internal ASCII space also appears in the
-following places <strong>only</strong>.</p>
+<p>언어나 다른 스타일 규칙에 의해 요구되는 곳 외에, 리터럴, 주석, 그리고 JSDoc을 제외하고, 하나의 내부 ASCII 공백 또한 다음의 위치<strong>에만</strong> 나타납니다.</p>
 
 <ol>
-<li>Separating any reserved word (such as <code>if</code>, <code>for</code>, or <code>catch</code>) from an open
-parenthesis (<code>(</code>) that follows it on that line.</li>
-<li>Separating any reserved word (such as <code>else</code> or <code>catch</code>) from a closing
-curly brace (<code>}</code>) that precedes it on that line.</li>
-<li>Before any open curly brace (<code>{</code>), with two exceptions:
+<li>줄에 뒤따르는 여는 괄호(<code>(</code>)와 임의의 (<code>if</code>, <code>for</code>, 혹은 <code>catch</code>와 같은)예약어를 구분.</li>
+<li>줄에 앞서는 닫는 줄괄호(<code>}</code>)와 임의의 (<code>else</code> 혹은 <code>catch</code>와 같은)예약어를 구분. 여기에는 두 가지 예외가 있습니다:
 <ol>
-<li>Before an object literal that is the first argument of a function or the
-first element in an array literal (e.g. <code>foo({a: [{c: d}]})</code>).</li>
-<li>In a template expansion, as it is forbidden by the language
+<li>함수의 첫 번째 인자 혹은 배열에서 첫 번째 원소인 객체 리터럴의 앞 (e.g. <code>foo({a: [{c: d}]})</code>).</li>
+<li>템플릿 확장에서, 언어에 의해 금지된 경우
 (e.g. <code>abc${1 + 2}def</code>).</li>
 </ol></li>
-<li>On both sides of any binary or ternary operator.</li>
-<li>After a comma (<code>,</code>) or semicolon (<code>;</code>). Note that spaces are <em>never</em> allowed
-before these characters.</li>
-<li>After the colon (<code>:</code>) in an object literal.</li>
-<li>On both sides of the double slash (<code>//</code>) that begins an end-of-line
-comment. Here, multiple spaces are allowed, but not required.</li>
-<li>After an open-JSDoc comment character and on both sides of close characters
-(e.g. for short-form type declarations or casts: <code>this.foo = /** @type
+<li>임의의 이항 혹은 삼항 연산자의 양쪽.</li>
+<li>쉼표(<code>,</code>) 혹은 세미콜론(<code>;</code>) 뒤. 이러한 문자들 뒤에는 공백이 <em>절대</em> 허용되지 않는다는 것을 기억하십시오.</li>
+<li>객체 리터럴에서 콜론(<code>:</code>) 뒤.</li>
+<li>줄 끝의 주석이 시작되는 더블 슬래시(<code>//</code>)의 양쪽. 이곳에는 여러 개의 공백이 허용되지만, 반드시는 아닙니다.</li>
+<li>JSDoc 주석의 여는 문자 뒤와 닫는 문자의 양쪽
+(e.g. 타입 선언이나 형변환의 단형(short-form)에: <code>this.foo = /** @type
 {number} */ (bar);</code> or <code>function(/** string */ foo) {</code>).</li>
 </ol>
 
