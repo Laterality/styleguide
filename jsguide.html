@@ -629,9 +629,9 @@ some.reallyLongFunctionCall(arg1, arg2, arg3)
 경우에도 버전 히스토리 정보를 손상시키고, 코드 리뷰어의 업무를
 둔화(slows down)시키며 머지 충돌도 악화시킵니다.</p>
 
-<h4 id="formatting-function-arguments">4.6.4 Function arguments</h4>
+<h4 id="formatting-function-arguments">4.6.4 함수 인자</h4>
 
-<p>Prefer to put all function arguments on the same line as the function name. If doing so would exceed the 80-column limit, the arguments must be line-wrapped in a readable way. To save space, you may wrap as close to 80 as possible, or put each argument on its own line to enhance readability. Indentation should be four spaces. Aligning to the parenthesis is allowed, but discouraged. Below are the most common patterns for argument wrapping:</p>
+<p>모든 함수 인자를 함수 이름과 같은 줄에 넣으려고 하는 것이 좋습니다. 만약 80제한을 초과하려 한다면, 인자들은 읽기 좋은 형태로 줄 포장되어야 합니다. 공간을 절약하기 위해, 가능한 한 80자에 가깝게 포장하거나, 가독성을 향상시키기 위해 각 인자를 줄마다 넣을 수도 있습니다. 들여쓰기는 4 칸이어야 합니다. 괄호에 맞추는 것도 허용되지만 권장사항은 아닙니다. 아래는 인자 포장의 가장 흔한 패턴입니다:</p>
 
 <pre><code class="language-js prettyprint">// Arguments start on a new line, indented four spaces. Preferred when the
 // arguments don't fit on the same line with the function name (or the keyword
