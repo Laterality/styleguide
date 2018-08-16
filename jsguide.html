@@ -672,19 +672,17 @@ doSomething(
 
 <p>괄호는 형 변환에 필요합니다: <code>/** @type {!Foo} */ (foo)</code>.</p>
 
-<h3 id="formatting-comments">4.8 Comments</h3>
+<h3 id="formatting-comments">4.8 주석</h3>
 
-<p>This section addresses <em>implementation comments</em>. JSDoc is addressed separately
-in <a href="#jsdoc">??</a>.</p>
+<p>이 섹션에서는 <em>구현 주석</em>을 다룹니다. JSDoc은 <a href="#jsdoc">??</a>에서 별도로 다뤄집니다..</p>
 
-<h4 id="formatting-block-comment-style">4.8.1 Block comment style</h4>
+<h4 id="formatting-block-comment-style">4.8.1 블럭 주석 스타일</h4>
 
-<p>Block comments are indented at the same level as the surrounding code. They may
-be in <code>/* &#8230; */</code> or <code>//</code>-style. For multi-line <code>/* &#8230; */</code> comments, subsequent
-lines must start with * aligned with the <code>*</code> on the previous line, to make
-comments obvious with no extra context.  &#8220;Parameter name&#8221; comments should appear
-after values whenever the value and method name do not sufficiently convey the
-meaning.</p>
+<p>블럭 주석은 둘러싼 코드와 같은 수준으로 들여쓰기됩니다.
+<code>/* &#8230; */</code> 혹은 <code>//</code>-스타일이 될 수 있습니다.
+다중 행<code>/* &#8230; */</code> 주석에서, 주석을 명확하게 하기 위해
+그 다음 줄은 이전 줄의 <code>*</code>와 맞춰진 *로 시작해야 합니다.
+&#8220;매개변수명&#8221; 형태의 주석은 값과 메서드명이 의미를 충분히 전달하지 못하는 경우 언제든 나타납니다.</p>
 
 <pre><code class="language-js prettyprint">/*
  * This is
@@ -699,9 +697,9 @@ meaning.</p>
 someFunction(obviousParam, true /* shouldRender */, 'hello' /* name */);
 </code></pre>
 
-<p>Comments are not enclosed in boxes drawn with asterisks or other characters.</p>
+<p>주석은 별표나 다른 문자로 그려진 상자로 둘러싸이지 않습니다.</p>
 
-<p>Do not use JSDoc (<code>/** &#8230; */</code>) for any of the above implementation comments.</p>
+<p>JSDoc(<code>/** &#8230; */</code>)을 위와 같은 구현 주석에 사용하지 마십시오.</p>
 
 <h2 id="language-features">5 Language features</h2>
 
