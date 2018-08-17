@@ -701,19 +701,18 @@ someFunction(obviousParam, true /* shouldRender */, 'hello' /* name */);
 
 <p>JSDoc(<code>/** &#8230; */</code>)을 위와 같은 구현 주석에 사용하지 마십시오.</p>
 
-<h2 id="language-features">5 Language features</h2>
+<h2 id="language-features">5 언어의 특징</h2>
 
-<p>JavaScript includes many dubious (and even dangerous) features.  This section
-delineates which features may or may not be used, and any additional constraints
-on their use.</p>
+<p>Javascript는 많은 의심스러운(또한 위험하기도 한) 특징들을 포함합니다. 이
+섹션은 사용되거나 사용되지 않을 수도 있는 특징들과 이들의 사용에 있어서
+추가적인 제약 사항들을 기술합니다.</p>
 
-<h3 id="features-local-variable-declarations">5.1 Local variable declarations</h3>
+<h3 id="features-local-variable-declarations">5.1 지역 변수 선언</h3>
 
-<h4 id="features-use-const-and-let">5.1.1 Use <code>const</code> and <code>let</code></h4>
+<h4 id="features-use-const-and-let">5.1.1 <code>const</code>와 <code>let</code> 사용</h4>
 
-<p>Declare all local variables with either <code>const</code> or <code>let</code>. Use const by default,
-unless a variable needs to be reassigned. The <code class="badcode">var</code>
-keyword must not be used.</p>
+<p>모든 지역 변수는 <code>const</code> 혹은 <code>let</code>과 함께 선언하십시오. 변수가 재할당 될 필요가 없는 한, 기본적으로 const를 사용하십시오. The <code class="badcode">var</code>
+키워드는 사용되서는 안됩니다.</p>
 
 <h4 id="features-one-variable-per-declaration">5.1.2 One variable per declaration</h4>
 
