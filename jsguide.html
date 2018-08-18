@@ -714,16 +714,13 @@ someFunction(obviousParam, true /* shouldRender */, 'hello' /* name */);
 <p>모든 지역 변수는 <code>const</code> 혹은 <code>let</code>과 함께 선언하십시오. 변수가 재할당 될 필요가 없는 한, 기본적으로 const를 사용하십시오. The <code class="badcode">var</code>
 키워드는 사용되서는 안됩니다.</p>
 
-<h4 id="features-one-variable-per-declaration">5.1.2 One variable per declaration</h4>
+<h4 id="features-one-variable-per-declaration">5.1.2 선언 당 하나의 변수</h4>
 
-<p>Every local variable declaration declares only one variable: declarations such
-as <code class="badcode">let a = 1, b = 2;</code> are not used.</p>
+<p>모든 지역 변수 선언은 하나의 변수만을 선언합니다. <code class="badcode">let a = 1, b = 2;</code>와 같은 선언은 사용되지 않습니다.</p>
 
-<h4 id="features-declared-when-needed">5.1.3 Declared when needed, initialized as soon as possible</h4>
+<h4 id="features-declared-when-needed">5.1.3 필요할때 선언, 가능한 빨리 초기화</h4>
 
-<p>Local variables are <strong>not</strong> habitually declared at the start of their containing
-block or block-like construct. Instead, local variables are declared close to
-the point they are first used (within reason), to minimize their scope.</p>
+<p>지역 변수는 습관적으로 이를 포함하는 블럭 혹은 유사 블럭 구조의 시작에서 선언되지 <strong>않</strong>습니다. 대신, 스코프를 최소화하기 위해 지역 변수는 이들이 처음으로 (필요에 맞게)사용되는 지점에서 가까운 곳에 선언됩니다.</p>
 
 <h4 id="features-declare-types-as-needed">5.1.4 Declare types as needed</h4>
 
