@@ -777,39 +777,30 @@ const a4 = [];
 
 <p><code> new Array(length)</code>를 사용하여 명시적으로 주어진 길이의 배열을 할당하는 것은 적절한 경우에만 허용됩니다.</p>
 
-<h4 id="features-arrays-non-numeric-properties">5.2.3 Non-numeric properties</h4>
+<h4 id="features-arrays-non-numeric-properties">5.2.3 숫자가 아닌 프로퍼티</h4>
 
-<p>Do not define or use non-numeric properties on an array (other than
-<code>length</code>). Use a <code>Map</code> (or <code>Object</code>) instead.</p>
+<p>배열에 (<code>length</code> 이외에)숫자가 아닌 프로퍼티를 정의하거나 사용하지 마십시오. 대신 <code>Map</code> (혹은 <code>Object</code>)를 사용하십시오.</p>
 
-<h4 id="features-arrays-destructuring">5.2.4 Destructuring</h4>
+<h4 id="features-arrays-destructuring">5.2.4 비구조화(Destructuring)</h4>
 
-<p>Array literals may be used on the left-hand side of an assignment to perform
-destructuring (such as when unpacking multiple values from a single array or
-iterable).  A final <q>rest</q> element may be included (with no space between the
-<code>...</code> and the variable name). Elements should be omitted if they are unused.</p>
+<p>배열 리터럴은 (단일 배열이나 순회 가능한 객체로부터 여러 개의 값을 가져오는것과 같은)비구조화 할당의 왼쪽에서 사용될 수 있습니다. 마지막 <q>나머지</q> 원소가 (<code>...</code>와 변수명 사이에 공백 없이)포함될 수 있습니다. 원소가 사용되지 않는 경우에는 생략되어야 합니다.</p>
 
 <pre><code class="language-js prettyprint">const [a, b, c, ...rest] = generateResults();
 let [, b,, d] = someArray;
 </code></pre>
 
-<p>Destructuring may also be used for function parameters (note that a parameter
-name is required but ignored). Always specify <code>[]</code> as the default value if a
-destructured array parameter is optional, and provide default values on the left
-hand side:</p>
+<p>비구조화는 함수 매개변수에서도 사용될 수 있습니다 (매개변수 이름은 필요하지만 무시된다는 점을 기억하십시오). 비구조화된 배열 매개변수가 선택 사항이라면, 항상 <code>[]</code>를 기본값으로 명시하고, 왼쪽에 기본값을 제공하십시오:</p>
 
 <pre><code class="language-js prettyprint">/** @param {!Array&lt;number&gt;=} param1 */
 function optionalDestructuring([a = 4, b = 2] = []) { &#8230; };
 </code></pre>
 
-<p>Illegal:</p>
+<p>좋지 않은 예:</p>
 
 <pre><code class="language-js prettyprint badcode">function badDestructuring([a, b] = [4, 2]) { &#8230; };
 </code></pre>
 
-<p>Tip: For (un)packing multiple values into a function&#8217;s parameter or return,
-prefer object destructuring to array destructuring when possible, as it allows
-naming the individual elements and specifying a different type for each.*</p>
+<p>팁: 여러 값을 함수의 매개변수 혹은 반환값으로 전달할 때는, 개개의 원소에 명명이 가능하고 각각 다른 타입을 명시할 수 있기 때문에 가능하면 배열 비구조화보다 객체 비구조화를 선호하십시오.</p>
 
 <h4 id="features-arrays-spread-operator">5.2.5 Spread operator</h4>
 
