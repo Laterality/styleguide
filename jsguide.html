@@ -802,14 +802,11 @@ function optionalDestructuring([a = 4, b = 2] = []) { &#8230; };
 
 <p>팁: 여러 값을 함수의 매개변수 혹은 반환값으로 전달할 때는, 개개의 원소에 명명이 가능하고 각각 다른 타입을 명시할 수 있기 때문에 가능하면 배열 비구조화보다 객체 비구조화를 선호하십시오.</p>
 
-<h4 id="features-arrays-spread-operator">5.2.5 Spread operator</h4>
+<h4 id="features-arrays-spread-operator">5.2.5 전개 연산자</h4>
 
-<p>Array literals may include the spread operator (<code>...</code>) to flatten elements out
-of one or more other iterables.  The spread operator should be used instead of
-more awkward constructs with <code>Array.prototype</code>.  There is no space after the
-<code>...</code>.</p>
+<p>배열 리터럴은 하나 이상의 다른 순회 가능한(iterable) 객체에서 원소들을 평평하게(faltten) 하기 위해 전개 연산자(<code>...</code>)를 포함할 수도 있습니다. 전개 연산자는 <code>Array.prototype</code>을 사용하는 더 어색한 구문 대신에 사용되어야 합니다. <code>...</code> 뒤에는 공백이 없습니다.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">[...foo]   // preferred over Array.prototype.slice.call(foo)
 [...foo, ...bar]   // preferred over foo.concat(bar)
