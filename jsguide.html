@@ -812,18 +812,15 @@ function optionalDestructuring([a = 4, b = 2] = []) { &#8230; };
 [...foo, ...bar]   // preferred over foo.concat(bar)
 </code></pre>
 
-<h3 id="features-object-literals">5.3 Object literals</h3>
+<h3 id="features-object-literals">5.3 객체 리터럴</h3>
 
-<h4 id="features-objects-use-trailing-comma">5.3.1 Use trailing commas</h4>
+<h4 id="features-objects-use-trailing-comma">5.3.1 뒤따르는 쉼표를 사용할 것</h4>
 
-<p>Include a trailing comma whenever there is a line break between the final
-property and the closing brace.</p>
+<p>마지막 프로퍼티와 닫는 중괄호 사이에 개행이 있을 때마다 쉼표를 포함합니다.</p>
 
-<h4 id="features-objects-ctor">5.3.2 Do not use the <code>Object</code> constructor</h4>
+<h4 id="features-objects-ctor">5.3.2 <code>Object</code> 생성자 사용하지 말 것</h4>
 
-<p>While <code>Object</code> does not have the same problems as <code>Array</code>, it is still
-disallowed for consistency. Use an object literal (<code>{}</code> or <code>{a: 0, b: 1, c: 2}</code>)
-instead.</p>
+<p><code>Object</code>가 <code>Array</code>와 동일한 문제를 갖고 있진 않더라도, 일관성을 위해 허용되지 않습니다. 대신 객체 리터럴(<code>{}</code> 혹은 <code>{a: 0, b: 1, c: 2}</code>)을 사용하십시오.</p>
 
 <h4 id="features-objects-mixing-keys">5.3.3 Do not mix quoted and unquoted keys</h4>
 
