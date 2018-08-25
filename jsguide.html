@@ -835,21 +835,19 @@ function optionalDestructuring([a = 4, b = 2] = []) { &#8230; };
 }
 </code></pre>
 
-<h4 id="features-objects-computed-property-names">5.3.4 Computed property names</h4>
+<h4 id="features-objects-computed-property-names">5.3.4 계산된 프로퍼티 이름</h4>
 
-<p>Computed property names (e.g., <code>{['key' + foo()]: 42}</code>) are allowed, and are
-considered dict-style (quoted) keys (i.e., must not be mixed with non-quoted
-keys) unless the computed property is a symbol (e.g., <code>[Symbol.iterator]</code>).
-Enum values may also be used for computed keys, but should not be mixed with
-non-enum keys in the same literal.</p>
+<p>계산된 프로퍼티 이름(e.g., <code>{['key' + foo()]: 42}</code>)는 허용되며,
+계산된 프로퍼티가 기호(e.g., <code>[Symbol.iterator]</code>)가 아닌 한,
+사전 스타일 (따옴표를 사용하는) 키로 간주됩니다(즉, 따옴표를 사용하지 않는 키와
+혼용돼서는 안됩니다).
+열거 값 또한 계산된 키에 사용될 수 있습니다, 하지만 같은 리터럴에서 비-열거형 키와 혼용되서는 안됩니다.</p>
 
-<h4 id="features-objects-method-shorthand">5.3.5 Method shorthand</h4>
+<h4 id="features-objects-method-shorthand">5.3.5 메서드 축약</h4>
 
-<p>Methods can be defined on object literals using the method shorthand (<code>{method()
-{&#8230; }}</code>) in place of a colon immediately followed by a <code>function</code> or arrow
-function literal.</p>
+<p>메서드는 객체 리터럴에서 바로 뒤에 <code>function</code>이나 화살표 함수 리터럴이 있는 대신 메서드 축약을 사용하여 정의될 수 있습니다.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">return {
   stuff: 'candy',
@@ -859,9 +857,9 @@ function literal.</p>
 };
 </code></pre>
 
-<p>Note that <code>this</code> in a method shorthand or <code>function</code> refers to the object
-literal itself whereas <code>this</code> in an arrow function refers to the scope outside
-the object literal.</p>
+<p>화살표 함수에서 <code>this</code>가 객체 리터럴 외부의 스코프를 참조하는
+것과 달리, 메서드 축약이나 <code>function</code>에서 <code>this</code>는
+객체 리터럴 자체를 참조한다는 점을 알아두십시오.</p>
 
 <p>Example:</p>
 
