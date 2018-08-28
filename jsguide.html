@@ -924,11 +924,10 @@ function nontrivialDefault({a, b} = {a: 2, b: 4}) {};
 
 <p>비구조화는 <code>goog.require</code>에서도 쓰일 수 있으며, 이 경우 포장되서는 안되며 전체 구문은 길이에 관계 없이 한 줄을 차지해야 합니다(<a href="#file-goog-require">??</a>을 참고하십시오). </p>
 
-<h4 id="features-objects-enums">5.3.8 Enums</h4>
+<h4 id="features-objects-enums">5.3.8 열거형</h4>
 
-<p>Enumerations are defined by adding the <code>@enum</code> annotation to an object literal.
-Additional properties may not be added to an enum after it is defined.  Enums
-must be constant, and all enum values must be deeply immutable.</p>
+<p>열거형은 객체 리터럴에 <code>@enum</code> 애노테이션을 추가함으로써 정의됩니다.
+정의된 이후에는 추가적인 프로퍼티가 추가되지 않을 수 있습니다. 열거형은 상수여야 하며, 모든 열거 값은 깊은 불변(deeply immutable) 객체여야 합니다.</p>
 
 <pre><code class="language-js prettyprint">/**
  * Supported temperature scales.
