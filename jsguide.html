@@ -182,7 +182,7 @@ goog.setTestOnly();
 
 <p>모듈 선언 직후 그룹화된 <code>goog.require</code>문으로
 임포트를 수행합니다. 각 <code>goog.require</code>은 하나의 상수
-볆명(alias)에 대입되거나, 여러 개의 상수 별칭으로 destructure
+볆명(alias)에 할당되거나, 여러 개의 상수 별칭으로 destructure
 됩니다. 이러한 별칭은 코드는 타입 표기에서 <code>require</code>된
 의존성을 참조할 수 있는 유일한 방법입니다. <code>goog.require</code>에 대한 인자를 제외하고 전체 이름은
 사용되지 않습니다. 별칭 이름은 가능하면 임포트된 모듈의 마지막
@@ -192,13 +192,13 @@ goog.setTestOnly();
 있습니다. <code>goog.require</code>문은 이 파일 다른 곳에서는 등장하지 않을 수 있습니다.</p>
 
 <p>만약 모듈이 부수 효과(side effect)만을 위해 임포트되었다면
-대입이 생략될 수 있지만, 전체 이름이 파일의 다른 곳에 등장하지 않을 수 있습니다. 
+할당이 생략될 수 있지만, 전체 이름이 파일의 다른 곳에 등장하지 않을 수 있습니다. 
 주석은 이것이 왜 필요하고 컴파일러 경고를 무시해야 하는 지 설명하기 위해 필요합니다.</p>
 
 
 
 <p>줄은 다음의 규칙에 따라 정렬됩니다. 왼쪽에 이름이 있는
-(별칭에 대입되는) require가 첫 번째이며, 그 이름들에 따라 알파벳 순으로
+(별칭에 할당되는) require가 첫 번째이며, 그 이름들에 따라 알파벳 순으로
 정렬됩니다. 그 다음 destructure된 require가 다시 한번 왼쪽의 이름으로 정렬됩니다.
 마지막으로, 임의의 단독 <code>goog.require</code> 호출이 위치합니다(일반적으로 이들은 오직 부수 효과만을 위해 임포트되는 모듈을 위한것입니다).</p>
 
@@ -382,7 +382,7 @@ someMethod(foo, {
 <h4 id="formatting-class-literals">4.2.3 클래스 리터럴</h4>
 
 <p>클래스 리터럴(선언이든 표현식이든)은 블럭으로써 들여쓰기됩니다. 메서드
-끝이나 클래스 <em>선언</em>(대입(assignment)과 같이 클래스 <em>표현식</em>을
+끝이나 클래스 <em>선언</em>(할당(assignment)과 같이 클래스 <em>표현식</em>을
 포함하는 구문은 여전히 세미콜론으로 끝납니다)의 닫는 중괄호에 세미콜론을
 추가하지 마십시오. <code>extends</code> 키워드를 사용하되, 클래스가 템플릿화된 타입을 확장하는 것이 아니라면 <code>@extends</code> JSDoc 표기는 사용하지 마십시오.</p>
 
@@ -525,7 +525,7 @@ some.reallyLongFunctionCall(arg1, arg2, arg3)
     currentEstimate) / 2.0f;
 </code></pre>
 
-<p>앞선 예시에서, 가장 높은 구문 수준에서 가장 낮은 구문 수준은 다음과 같습니다: 대입, 나누기, 함수 호출, 매개변수, 숫자 상수.</p>
+<p>앞선 예시에서, 가장 높은 구문 수준에서 가장 낮은 구문 수준은 다음과 같습니다: 할당, 나누기, 함수 호출, 매개변수, 숫자 상수.</p>
 
 <p>연산자는 다음과 같이 래핑됩니다:</p>
 
@@ -892,7 +892,7 @@ assertEquals(3, obj.method());
 
 <h4 id="features-objects-destructuring">5.3.7 비구조화</h4>
 
-<p>객체 비구조화 패턴은 하나의 객체로부터 여러 값을 비구조화하여 풀어내기 위해 대입의 왼쪽에서 사용될 수 있습니다.</p>
+<p>객체 비구조화 패턴은 하나의 객체로부터 여러 값을 비구조화하여 풀어내기 위해 할당의 왼쪽에서 사용될 수 있습니다.</p>
 
 <p>비구조화된 객체는 또한 함수 매개변수로도 사용될 수 있지만, 단일 수준의
 따옴표를 사용하지 않은 축약형 프로퍼티로 가능한 한 단순하게 유지되어야 합니다.
@@ -956,15 +956,14 @@ const Option = {
 
 <p>구체 클래스(concrete class)에 대한 생성자는 선택사항입니다. 서브클래스 생성자는 <code>this</code> 접근으로 필드 등을 설정하기 전에 <code>super()</code>를 호출해야 합니다. 인터페이스는 생성자를 정의해선 안됩니다.</p>
 
-<h4 id="features-classes-fields">5.4.2 Fields</h4>
+<h4 id="features-classes-fields">5.4.2 필드</h4>
 
-<p>Set all of a concrete object&#8217;s fields (i.e. all properties other than methods)
-in the constructor. Annotate fields that are never reassigned with <code>@const</code>
-(these need not be deeply immutable). Private fields must be annotated with
-<code>@private</code> and their names must end with a trailing underscore. Fields are never
-set on a concrete class' <code>prototype</code>.</p>
+<p>모든 구체 클래스의 필드(i.e. 메서드 외의 모든 프로퍼티)를 생성자에서
+설정하십시오. 다시 재할당 되지 않는 필드는 <code>@const</code>로 표기하십시오
+(깊은 불변일 필요는 없습니다). Private 필드는 <code>@private</code>으로
+표기되어야 하며 이들의 이름은 언더스코어로 끝나야 합니다. 필드는 절대 구체 클래스의 <code>prototype</code>에 설정하지 않습니다.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">class Foo {
   constructor() {
@@ -974,12 +973,12 @@ set on a concrete class' <code>prototype</code>.</p>
 }
 </code></pre>
 
-<p>Tip: Properties should never be added to or removed from an instance after the
-constructor is finished, since it significantly hinders VMs&#8217; ability to
-optimize.  If necessary, fields that are initialized later should be explicitly
-set to <code>undefined</code> in the constructor to prevent later shape changes. Adding
-<code>@struct</code> to an object will check that undeclared properties are not
-added/accessed.  Classes have this added by default.</p>
+<p>팁: VM의 최적화 능력을 상당히 저해하기 때문에 생성자가 종료된 후에
+프로퍼티는 절대로 인스턴스에 추가되거나 제거되어서는 안됩니다. 만약 필요한 경우,
+나중에 초기화될 필드는 이후의 형태 변화를 방지하기 위해 생성자에서 명시적으로
+<code>undefined</code>로 설정되어야 합니다. 객체에 <code>@struct</code>를
+추가하면 선언되지 않은 프로퍼티가 추가/접근되는지 검사합니다. 클래스는
+기본적으로 추가됩니다.</p>
 
 <h4 id="features-classes-computed-properties">5.4.3 Computed properties</h4>
 
