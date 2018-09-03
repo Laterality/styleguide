@@ -1013,27 +1013,25 @@ function callFoo(cls) { cls.foo(); }  // discouraged: don't call static methods 
 Sub.foo();  // illegal: don't call static methods on subclasses that don't define it themselves
 </code></pre>
 
-<h4 id="features-classes-old-style">5.4.5 Old-style class declarations</h4>
+<h4 id="features-classes-old-style">5.4.5 구형 방식의 클래스 선언</h4>
 
-<p>While ES6 classes are preferred, there are cases where ES6 classes may not be
-feasible.  For example:</p>
+<p>ES6가 선호되는 와중에도, ES6 클래스를 사용할 수 없는 경우가 있을 수 있습니다. 예를 들어:</p>
 
 <ol>
-<li><p>If there exist or will exist subclasses, including frameworks that create
-subclasses, that cannot be immediately changed to use ES6 class syntax. If
-such a class were to use ES6 syntax, all downstream subclasses not using ES6
-class syntax would need to be modified.</p></li>
-<li><p>Frameworks that require a known <code>this</code> value before calling the superclass
-constructor, since constructors with ES6 super classes do not have
-access to the instance <code>this</code> value until the call to <code>super</code> returns.</p></li>
+<li><p>서브클래스를 생성하는 프레임워크를 포함하여 서브클래스가 존재하거나
+존재할 예정이면, 즉시 ES6 구문을 사용하도록 변경할 수 없습니다. 해당 클래스가
+ES6 구문을 사용하고자 하는 경우, ES6 클래스 구문을 사용하지 않는 모든 하위
+서브클래가 변경되어야 합니다.</p></li>
+<li><p>ES6 수퍼클래스의 생성자는 <code>super</code> 호출이 반환하기 전까지
+인스턴스의 <code>this</code> 값에 접근할 수 없기 때문에, 수퍼클래스 생성자를
+호출하기 전에 알려진 <code>this</code> 값이 필요한 프레임워크.</p></li>
 </ol>
 
-<p>In all other ways the style guide still applies to this code: <code>let</code>, <code>const</code>,
-default parameters, rest, and arrow functions should all be used when
-appropriate.</p>
+<p>다른 모든 면에서 스타일 가이드는 여전히 이 코드에 
+적용합니다:<code>let</code>, <code>const</code>,
+기본 매개변수, rest, 그리고 화살표 함수는 모두 적절하게 사용되어야 합니다.</p>
 
-<p><code>goog.defineClass</code> allows for a class-like definition similar to ES6 class
-syntax:</p>
+<p><code>goog.defineClass</code>는 ES6 클래스 구문과 닮은 유사 클래스 정의를 허용합니다:</p>
 
 <pre><code class="language-javascript">let C = goog.defineClass(S, {
   /**
@@ -1055,8 +1053,7 @@ syntax:</p>
 });
 </code></pre>
 
-<p>Alternatively, while <code>goog.defineClass</code> should be preferred for all new code,
-more traditional syntax is also allowed.</p>
+<p>대신, 모든 새로운 코드에는 <code>goog.defineClass</code>가 선호되어야 합니다, 더 전통적인 구문들도 허용됩니다..</p>
 
 <pre><code class="language-javascript">/**
   * @constructor @extends {S}
@@ -1078,9 +1075,11 @@ C.prototype.method = function(param) {
 };
 </code></pre>
 
-<p>Per-instance properties should be defined in the constructor after the call to the super class constructor, if there is a super class.  Methods should be defined on the prototype of the constructor.</p>
+<p>수퍼 클래스가 있는 경우, 인스턴스 당 프로퍼티는 생성자에서 수퍼클래스 생성자 
+호출 뒤에 정의되어야 합니다. 메서드는 생성자의 프로토타입에 정의되어야 합니다. </p>
 
-<p>Defining constructor prototype hierarchies correctly is harder than it first appears!  For that reason, it is best to use <code>goog.inherits</code> from <a href="http://code.google.com/closure/library/">the Closure Library </a>.</p>
+<p>생성자의 프로토타입 계층을 올바르게 정의하는 것은 처음에 보이는 것 보다 더 어렵습니다! 그러한 이유에서,
+<a href="http://code.google.com/closure/library/">the Closure Library </a>으로부터 <code>goog.inherits</code>를 사용하는 것이 최선입니다.</p>
 
 <h4 id="features-classes-prototypes">5.4.6 Do not manipulate <code>prototype</code>s directly</h4>
 
