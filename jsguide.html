@@ -1092,19 +1092,11 @@ C.prototype.method = function(param) {
 
 <p><strong>예외</strong>: 인터페이스에 필드를 정의하는 것 (<a href="#features-classes-interfaces">??</a> 참고).</p>
 
-<h4 id="features-classes-getters-and-setters">5.4.7 Getters and Setters</h4>
+<h4 id="features-classes-getters-and-setters">5.4.7 Getters와 Setters</h4>
 
-<p>Do not use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">JavaScript getter and setter properties</a>.  They are potentially
-surprising and difficult to reason about, and have limited support in the
-compiler.  Provide ordinary methods instead.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">JavaScript getter and setter properties</a>를 사용하지 마십시오. 이들은 잠재적으로 놀랍고 추론하기도 어려우며, 컴파일러에서의 지원도 제한되어 있습니다. 대신 일반적인 메서드를 제공하십시오.</p>
 
-<p><strong>Exception</strong>: when working with data binding frameworks (such as Angular and
-Polymer), getters and setters may be used sparingly.  Note, however, that
-compiler support is limited.  When they are used, they must be defined either
-with <code>get foo()</code> and <code>set foo(value)</code> in the class or object literal, or if that
-is not possible, with <code>Object.defineProperties</code>.  Do not use
-<code>Object.defineProperty</code>, which interferes with property renaming.  Getters
-<strong>must not</strong> change observable state.</p>
+<p><strong>예외</strong>: (Angular나 Polymer와 같은)데이터 바인딩 프레임워크로 작업할 때에는 getter와 setter가 드물게 사용될 수 있습니다. 하지만, 컴파일러 지원이 제한된다는 점을 기억하십시오. 이들이 사용되면 클래스 혹은 객체 리터럴에서, 혹은 불가능하다면 <code>Object.defineProperties</code>로 <code>get foo()</code>와 <code>set foo(value)</code> 둘 중 하나는 정의되어야 합니다. 프로퍼티 이름 변경에 간섭하는 <code>Object.defineProperty</code>는 사용하지 마십시오. Getter는 관측 가능한 상태가 바뀌어서는 <strong>안됩니다</strong>.</p>
 
 <p>Illegal:</p>
 
