@@ -1098,20 +1098,18 @@ C.prototype.method = function(param) {
 
 <p><strong>예외</strong>: (Angular나 Polymer와 같은)데이터 바인딩 프레임워크로 작업할 때에는 getter와 setter가 드물게 사용될 수 있습니다. 하지만, 컴파일러 지원이 제한된다는 점을 기억하십시오. 이들이 사용되면 클래스 혹은 객체 리터럴에서, 혹은 불가능하다면 <code>Object.defineProperties</code>로 <code>get foo()</code>와 <code>set foo(value)</code> 둘 중 하나는 정의되어야 합니다. 프로퍼티 이름 변경에 간섭하는 <code>Object.defineProperty</code>는 사용하지 마십시오. Getter는 관측 가능한 상태가 바뀌어서는 <strong>안됩니다</strong>.</p>
 
-<p>Illegal:</p>
+<p>옳지 않은 예:</p>
 
 <pre><code class="language-js prettyprint badcode">class Foo {
   get next() { return this.nextId++; }
 }
 </code></pre>
 
-<h4 id="features-classes-overriding-tostring">5.4.8 Overriding toString</h4>
+<h4 id="features-classes-overriding-tostring">5.4.8 toString 오버라이딩</h4>
 
-<p>The <code>toString</code> method may be overridden, but must always succeed and never have
-visible side effects.</p>
+<p>The <code>toString</code> 메서드는 오버라이드 될 수 있습니다, 하지만 반드시 성공해야 하며 부수 효과(side effect)가 없어야 합니다.</p>
 
-<p>Tip: Beware, in particular, of calling other methods from toString, since
-exceptional conditions could lead to infinite loops.</p>
+<p>팁: 예외적인 조건이 무한 루프를 만들 수도 있으므로 toString에서 다른 메서드를 호출할 때는 특히 주의하십시오.</p>
 
 <h4 id="features-classes-interfaces">5.4.9 Interfaces</h4>
 
