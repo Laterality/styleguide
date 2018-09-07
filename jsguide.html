@@ -1111,16 +1111,16 @@ C.prototype.method = function(param) {
 
 <p>팁: 예외적인 조건이 무한 루프를 만들 수도 있으므로 toString에서 다른 메서드를 호출할 때는 특히 주의하십시오.</p>
 
-<h4 id="features-classes-interfaces">5.4.9 Interfaces</h4>
+<h4 id="features-classes-interfaces">5.4.9 인터페이스</h4>
 
-<p>Interfaces may be declared with <code>@interface</code> or <code>@record</code>. Interfaces declared
-with <code>@record</code> can be explicitly (i.e. via <code>@implements</code>) or implicitly
-implemented by a class or object literal.</p>
+<p>인터페이스는 <code>@interface</code> 혹은 <code>@record</code>와 함께 선언될
+것입니다. <code>@record</code>와 함께 선언된 인터페이스는 클래스 혹은 객체
+리터럴에 의해 (<code>@implements</code>를 통해)명시적으로 혹은 암시적으로
+구현될 수 있습니다.</p>
 
-<p>All non-static method bodies on an interface must be empty blocks.  Fields must
-be defined after the interface body as stubs on the <code>prototype</code>.</p>
+<p>인터페이스의 모든 비 정적 메서드 본문은 빈 블럭이어야 합니다. 필드는 인터페이스 본문 뒤에 <code>prototype</code>에 스텁으로 정의되어야 합니다.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">/**
  * Something that can frobnicate.
