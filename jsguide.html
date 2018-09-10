@@ -1138,15 +1138,13 @@ class Frobnicator {
 Frobnicator.prototype.attempts;
 </code></pre>
 
-<h3 id="features-functions">5.5 Functions</h3>
+<h3 id="features-functions">5.5 함수</h3>
 
-<h4 id="features-functions-top-level-functions">5.5.1 Top-level functions</h4>
+<h4 id="features-functions-top-level-functions">5.5.1 상위 수준 함수</h4>
 
-<p>Exported functions may be defined directly on the <code>exports</code> object, or else
-declared locally and exported separately.  Non-exported functions are encouraged
-and should not be declared <code>@private</code>.</p>
+<p>export되는 함수는 <code>exports</code>객체에 직접 정의되거나, 혹은 로컬에서 선언되고 별도로 export될 수도 있습니다. export되지 않는 함수는 권장되며 <code>@private</code>로 선언되서는 안됩니다.</p>
 
-<p>Examples:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">/** @return {number} */
 function helperFunction() {
