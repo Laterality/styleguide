@@ -1197,13 +1197,13 @@ exports.foo = (arg) =&gt; {
 
 <h4 id="features-functions-generators">5.5.4 Generators</h4>
 
-<p>Generators enable a number of useful abstractions and may be used as needed.</p>
+<p>Generators는 여러 유용한 추상화를 가능케 하고 필요에 따라서 사용될 수 있습니다.</p>
 
-<p>When defining generator functions, attach the <code>*</code> to the <code>function</code> keyword when
-present, and separate it with a space from the name of the function.  When using
-delegating yields, attach the <code>*</code> to the <code>yield</code> keyword.</p>
+<p>generator 함수를 정의할 때는 <code>*</code>을 <code>function</code> 키워드에
+붙이며, 공백으로 함수 이름과 구분합니다. delegating yeilds를 사용할 때는
+<code>*</code>을 <code>yeild</code> 키워드에 붙입니다. </p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">/** @return {!Iterator&lt;number&gt;} */
 function* gen1() {
