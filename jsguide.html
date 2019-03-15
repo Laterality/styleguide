@@ -1223,25 +1223,18 @@ class SomeClass {
 }
 </code></pre>
 
-<h4 id="features-functions-parameters">5.5.5 Parameters</h4>
+<h4 id="features-functions-parameters">5.5.5 파라미터</h4>
 
-<p>Function parameters must be typed with JSDoc annotations in the JSDoc preceding
-the function&#8217;s definition, except in the case of same-signature <code>@override</code>s,
-where all types are omitted.</p>
+<p>모든 타입이 생략되는 동일 시그니처 <code>@override</code>를 제외하고, 함수 파라미터는 함수의 정의 앞에 JSDoc 어노테이션으로 타입이 명시되어야 합니다.</p>
 
-<p>Parameter types <em>may</em> be specified inline, immediately before the parameter name
-(as in <code>(/** number */ foo, /** string */ bar) =&gt; foo + bar</code>). Inline and
-<code>@param</code> type annotations <em>must not</em> be mixed in the same function definition.</p>
+<p>파라미터 타입은 파라미터 이름의 바로 앞에 (<code>(/** number */ foo, /** string */ bar) =&gt; foo + bar</code>처럼) 인라인으로 명시될 <em>수</em> 있습니다. 인라인과 <code>@param</code> 타입 어노테이션은 같은 함수 정의에서 혼용돼서는 <em>안됩니다</em>.</p>
 
-<h5 id="features-functions-default-parameters">5.5.5.1 Default parameters</h5>
+<h5 id="features-functions-default-parameters">5.5.5.1 기본 파라미터</h5>
 
-<p>Optional parameters are permitted using the equals operator in the parameter
-list. Optional parameters must include spaces on both sides of the equals
-operator, be named exactly like required parameters (i.e., not prefixed with
-<code>opt_</code>), use the <code>=</code> suffix in their JSDoc type, come after required parameters,
-and not use initializers that produce observable side effects. All optional
-parameters must have a default value in the function declaration, even if that
-value is <code>undefined</code>.</p>
+<p>파라미터 목록에는 동등 연산자를 사용하는 선택적 파라미터가 허용됩니다. 선택적 파라미터는 동등 연산자의 양쪽에 공백을 포함해야 하고, 필수 파라미터 처럼 명명되어야 하며
+(i.e., <code>opt_</code>가 앞에 붙지 않는), JSDoc 타입에서 <code>=</code> 접미사를 사용하고, 필수 파라미터 이후에 위치하며,
+관측 가 능한 부수 효과(side effect)를 만들어내는 초기자를 사용하지 않습니다.
+모든 선택적 파라미터는 함수 선언에서 그 값이 <code>undefinedl</code>라 하더라도 기본값을 가져야 합니다.</p>
 
 <p>Example:</p>
 
@@ -1253,28 +1246,17 @@ value is <code>undefined</code>.</p>
 function maybeDoSomething(required, optional = '', node = undefined) {}
 </code></pre>
 
-<p>Use default parameters sparingly. Prefer destructuring (as in
-<a href="#features-objects-destructuring">??</a>) to create readable APIs when there
-are more than a small handful of optional parameters that do not have a natural
-order.</p>
+<p>기본 파라미터를 아껴 사용하십시오.
+자연적인 순서가 없는 소수의 선택적 파라미터가 있는 경우에는 읽기 좋은 API를 만들기 위해 l (<a href="#features-objects-destructuring">??</a>에서와 같은) 분해를 사용하십시오.</p>
 
-<p>Note: Unlike Python's default parameters, it is okay to use initializers that
-return new mutable objects (such as <code>{}</code> or <code>[]</code>) because the initializer is
-evaluated each time the default value is used, so a single object won't be
-shared across invocations.</p>
+<p>Note: Python의 기본 파라미터와는 달리, 초기자는 매번 기본값이 사용될 때 평가되기 때문에 단일 객체가 함수 호출 간에 공유되지 않으므로 (<code>{}</code> or <code>[]</code>와 같은)새로운 가변(mutable) 객체를 반환하는 초기자를 사용해도 괜찮습니다.</p>
 
-<p>Tip: While arbitrary expressions including function calls may be used as
-initializers, these should be kept as simple as possible. Avoid initializers
-that expose shared mutable state, as that can easily introduce unintended
-coupling between function calls.</p>
+<p>Tip: 함수 호출을 포함한 임의의 표현식이 초기자로 사용될 수는 있지만, 이는 가능한 한 단순하게 유지되어야 합니다.
+함수 호출 사이에 의도치 않은 결합(coupling)을 낳을 수 있으므로, 공유된 가변 상태를 노출하는 초기자를 피하십시오.</p>
 
-<h5 id="features-functions-rest-parameters">5.5.5.2 Rest parameters</h5>
+<h5 id="features-functions-rest-parameters">5.5.5.2 Rest 파라미터</h5>
 
-<p>Use a <em>rest</em> parameter instead of accessing <code>arguments</code>. Rest parameters are
-typed with a <code>...</code> prefix in their JSDoc. The rest parameter must be the last
-parameter in the list. There is no space between the <code>...</code> and the parameter
-name.  Do not name the rest parameter <code>var_args</code>. Never name a local variable or
-parameter <code>arguments</code>, which confusingly shadows the built-in name.</p>
+<p><code>arguments</code>에 접근하는 대신 <em>Rest</em> 파라미터를 사용하십시오. Rest 파라미터는 JSDoc에서 <code>...</code> 접미사로 타입을 명시합니다. Rest파라미터는 목록에서 마지막 파라미터여야 합니다. <code>...</code>와 파라미터 이름 사이에는 공백이 없습니다. Rest 파라미터를 <code>var_args</code>로 명명하지 마십시오. 내장된 이름과 혼동될 수 있으므로 절대로 지역변수나 파라미터를 <code>arguments</code>로 명명하지 마십시오.</p>
 
 <p>Example:</p>
 
@@ -1312,8 +1294,8 @@ myFunction(...array, ...iterable, ...generator());
 
 <h4 id="features-strings-use-single-quotes">5.6.1 Use single quotes</h4>
 
-<p>Ordinary string literals are delimited with single quotes (<code>'</code>), rather than
-double quotes (<code>"</code>).</p>
+<p>Ordinary string literals are delimited with single quotes (<code>&lsquo;</code>), rather than
+double quotes (<code>&ldquo;</code>).</p>
 
 <p>Tip: if a string contains a single quote character, consider using a template
 string to avoid having to escape the quote.</p>
