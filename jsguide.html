@@ -1267,24 +1267,19 @@ function maybeDoSomething(required, optional = '', node = undefined) {}
 function variadic(array, ...numbers) {}
 </code></pre>
 
-<h4 id="features-functions-returns">5.5.6 Returns</h4>
+<h4 id="features-functions-returns">5.5.6 반환값</h4>
 
-<p>Function return types must be specified in the JSDoc directly above the function
-definition, except in the case of same-signature <code>@override</code>s where all types
-are omitted.</p>
+<p>모든 타입이 생략되는 동일한 시그니처 <code>@override</code>를 제외하고, 함수의 반환 타입은 함수 정의 바로 위의 JSDoc에 명시되어야 합니다.</p>
 
-<h4 id="features-functions-generics">5.5.7 Generics</h4>
+<h4 id="features-functions-generics">5.5.7 제네릭</h4>
 
-<p>Declare generic functions and methods when necessary with <code>@template TYPE</code> in
-the JSDoc above the class definition.</p>
+<p>필요한 경우 클래스 위의 JSDoc에 <code>@template TYPE</code>을 사용하여 제네릭 함수와 메서드를 선언하십시오.</p>
 
-<h4 id="features-functions-spread-operator">5.5.8 Spread operator</h4>
+<h4 id="features-functions-spread-operator">5.5.8 전개 연산자</h4>
 
-<p>Function calls may use the spread operator (<code>...</code>).  Prefer the spread operator
-to <code>Function.prototype.apply</code> when an array or iterable is unpacked into
-multiple parameters of a variadic function.  There is no space after the <code>...</code>.</p>
+<p>함수 호출은 전개 연산자(<code>...</code>)를 사용할 수 있습니다. 배열이나 iterable한 객체를 가변 인자 함수의 여러 파라미터로 풀 때 <code>Function.prototype.apply</code>에 전개 연산자를 사용하는 것을 선호하십시오. <code>...</code> 뒤에는 공백이 없습니다.</p>
 
-<p>Example:</p>
+<p>예시:</p>
 
 <pre><code class="language-js prettyprint">function myFunction(...elements) {}
 myFunction(...array, ...iterable, ...generator());
