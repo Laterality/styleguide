@@ -1330,25 +1330,23 @@ ${a} / ${b} = ${a / b}`;
     'the concatenated strings are cleaner.';
 </code></pre>
 
-<h3 id="features-number-literals">5.7 Number literals</h3>
+<h3 id="features-number-literals">5.7 숫자 리터럴</h3>
 
-<p>Numbers may be specified in decimal, hex, octal, or binary.  Use exactly <code>0x</code>,
-<code>0o</code>, and <code>0b</code> prefixes, with lowercase letters, for hex, octal, and binary,
-respectively.  Never include a leading zero unless it is immediately followed by
-<code>x</code>, <code>o</code>, or <code>b</code>.</p>
+<p>16진수, 8진수, 그리고 2진수 숫자는 소문자와 함께 각각 <code>0x</code>, 
+<code>0o</code>, 그리고 <code>0b</code> 접두사를 사용하여 10진수, 16진수, 8진수,
+혹은 2진수로 표기될 수 있습니다. 바로 뒤에 <code>x</code>, <code>o</code>, or <code>b</code>가 따라오지 않는 한, 절대 앞에 0을 포함하지 마십시오.</p>
 
-<h3 id="features-control-structures">5.8 Control structures</h3>
+<h3 id="features-control-structures">5.8 제어 구조</h3>
 
-<h4 id="features-for-loops">5.8.1 For loops</h4>
+<h4 id="features-for-loops">5.8.1 For 루프</h4>
 
-<p>With ES6, the language now has three different kinds of <code>for</code> loops.  All may be
-used, though <code>for</code>-<code>of</code> loops should be preferred when possible.</p>
+<p>ES6에서, 언어는 서로 다른 세 종류의 <code>for</code> 루프를 갖고
+있습니다. 모두 사용되지만, 가능한 경우에는 <code>for</code>-<code>of</code> 루프가 선호되는 것이 좋습니다.</p>
 
-<p><code>for</code>-<code>in</code> loops may only be used on dict-style objects (see
-<a href="#features-objects-mixing-keys">??</a>), and should not be used to iterate over an
-array.  <code>Object.prototype.hasOwnProperty</code> should be used in <code>for</code>-<code>in</code> loops to
-exclude unwanted prototype properties.  Prefer <code>for</code>-<code>of</code> and <code>Object.keys</code> over
-<code>for</code>-<code>in</code> when possible.</p>
+<p><code>for</code>-<code>in</code> 루프는 사전 스타일 객체에서만 사용될 수
+있습니다(<a href="#features-objects-mixing-keys">??</a>을 보세요). 그리고 배열을 순회하는 데에는 사용되지 않는 것이 좋습니다.
+<code>forl</code>-<cod>inl</cod> 루프에서는 원치않는 프로토타입 속성을 제외하기 위해 <code>Object.prototype.hasOwnProperty</code>가 사용되는 것이 좋습니다. 
+가능하면 <code>for</code>-<code>inll</code>보다 <code>for</code>-<cod>of</cod>와 <code>Object.keys</code>를 선호하십시오.</p>
 
 <h4 id="features-exceptions">5.8.2 Exceptions</h4>
 
