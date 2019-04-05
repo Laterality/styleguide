@@ -1348,26 +1348,17 @@ ${a} / ${b} = ${a / b}`;
 <code>forl</code>-<cod>inl</cod> 루프에서는 원치않는 프로토타입 속성을 제외하기 위해 <code>Object.prototype.hasOwnProperty</code>가 사용되는 것이 좋습니다. 
 가능하면 <code>for</code>-<code>inll</code>보다 <code>for</code>-<cod>of</cod>와 <code>Object.keys</code>를 선호하십시오.</p>
 
-<h4 id="features-exceptions">5.8.2 Exceptions</h4>
+<h4 id="features-exceptions">5.8.2 예외</h4>
 
-<p>Exceptions are an important part of the language and should be used whenever
-exceptional cases occur.  Always throw <code>Error</code>s or subclasses of <code>Error</code>: never
-throw string literals or other objects.  Always use <code>new</code> when constructing an
-<code>Error</code>.</p>
+<p>예외는 언어의 중요한 부분이며 예외 상황이 발생했을 때 사용돼야 합니다. 항상 <code>Error</code> 혹은 <code>Error</code>의 서브클래스를 던져야 합니다: 절대 문자열 리터럴이나 다른 객체를 던지지 마십시오. <code>Error</code>를 생성할 때는 언제나 <code>new</code>를 사용하십시오.</p>
 
-<p>Custom exceptions provide a great way to convey additional error information
-from functions.  They should be defined and used wherever the native <code>Error</code>
-type is insufficient.</p>
+<p>커스텀 예외는 함수로부터 추가적인 오류 정보를 전달하는 훌륭한 방법입니다. 이들은 네이티브 <code>Error</code> 타입이 충분하지 않은 곳에서 사용돼야 합니다.</p>
 
-<p>Prefer throwing exceptions over ad-hoc error-handling approaches (such as
-passing an error container reference type, or returning an object with an error
-property).</p>
+<p>(오류 컨테이너 참조 타입이나, 오류 속성과 함께 객체를 반환하는)임기응변식 오류 처리보다는 예외를 던지는 것을 선호하십시오.</p>
 
-<h5 id="features-empty-catch-blocks">5.8.2.1 Empty catch blocks</h5>
+<h5 id="features-empty-catch-blocks">5.8.2.1 빈 catch 블럭</h5>
 
-<p>It is very rarely correct to do nothing in response to a caught exception. When
-it truly is appropriate to take no action whatsoever in a catch block, the
-reason this is justified is explained in a comment.</p>
+<p>캐치(catch)된 예외에 아무것도 하지 않는 것은 아주 드문 경우에만 옳습니다. 어떡해도 아무 행동도 하지 않는 것이 적절한 때에는, 그에 대한 정당한 이유가 주석에 설명되어야 합니다.</p>
 
 <pre><code class="language-js prettyprint">try {
   return handleNumericResponse(response);
@@ -1386,8 +1377,7 @@ return handleTextResponse(response);
   catch (expected) {}
 </code></pre>
 
-<p>Tip: Unlike in some other languages, patterns like the above simply don&#8217;t work
-since this will catch the error thrown by <code>fail</code>. Use <code>assertThrows()</code> instead.</p>
+<p>Tip: 일부 다른 언어와는 달리, 위와 같은 패턴은 <code>fail</code>에서 던져진 오류를 잡기 때문에 동작하지 않습니다. 대신 <code>assertThrows()</code>를 사용하십시오.</p>
 
 <h4 id="features-switch-statements">5.8.3 Switch statements</h4>
 
