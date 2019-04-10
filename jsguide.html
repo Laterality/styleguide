@@ -845,7 +845,7 @@ function optionalDestructuring([a = 4, b = 2] = []) { &#8230; };
 
 <h4 id="features-objects-method-shorthand">5.3.5 메서드 축약</h4>
 
-<p>메서드는 객체 리터럴에서 바로 뒤에 <code>function</code>이나 화살표 함수 리터럴이 있는 대신 메서드 축약을 사용하여 정의될 수 있습니다.</p>
+<p>메서드는 객체 리터럴에서 바로 뒤에 <code>function</code>이나 arrow function 리터럴이 있는 대신 메서드 축약을 사용하여 정의될 수 있습니다.</p>
 
 <p>예시:</p>
 
@@ -857,7 +857,7 @@ function optionalDestructuring([a = 4, b = 2] = []) { &#8230; };
 };
 </code></pre>
 
-<p>화살표 함수에서 <code>this</code>가 객체 리터럴 외부의 스코프를 참조하는
+<p>arrow function에서 <code>this</code>가 객체 리터럴 외부의 스코프를 참조하는
 것과 달리, 메서드 축약이나 <code>function</code>에서 <code>this</code>는
 객체 리터럴 자체를 참조한다는 점을 알아두십시오.</p>
 
@@ -1029,7 +1029,7 @@ ES6 구문을 사용하고자 하는 경우, ES6 클래스 구문을 사용하�
 
 <p>다른 모든 면에서 스타일 가이드는 여전히 이 코드에 
 적용합니다:<code>let</code>, <code>const</code>,
-기본 매개변수, rest, 그리고 화살표 함수는 모두 적절하게 사용되어야 합니다.</p>
+기본 매개변수, rest, 그리고 arrow function는 모두 적절하게 사용되어야 합니다.</p>
 
 <p><code>goog.defineClass</code>는 ES6 클래스 구문과 닮은 유사 클래스 정의를 허용합니다:</p>
 
@@ -1175,16 +1175,16 @@ exports.foo = (arg) =&gt; {
 
 <p>함수는 중첩된 함수 정의를 포함할 수 있습니다. 함수에 이름을 주는 것이 유용한 경우, 지역 <code>const</code>에 할당되어야 합니다.</p>
 
-<h4 id="features-functions-arrow-functions">5.5.3 화살표 함수</h4>
+<h4 id="features-functions-arrow-functions">5.5.3 arrow function</h4>
 
-<p>화살표 함수는 간결한 구문과 <code>this</code>로 인한 많은 어려움을
+<p>arrow function는 간결한 구문과 <code>this</code>로 인한 많은 어려움을
 해결합니다. 특히 중첩되는 함수에 대해 <code>function</code> 키워드보다 화살표
 함수를 선호하도록 하십시오(<a href="#features-objects-method-shorthand">??</a>
 참고).</p>
 
 <p><code>f.bind(this)</code>보다, 특히 <code>goog.bind(f, this)</code>보다
-화살표 함수를 선호하십시오. <code>const self = this</code> 작성을 피하십시오.
-화살표 함수는 특히 때때로 예기치않은 추가적인 인자를 넘기는 콜백에
+arrow function를 선호하십시오. <code>const self = this</code> 작성을 피하십시오.
+arrow function는 특히 때때로 예기치않은 추가적인 인자를 넘기는 콜백에
 유용합니다.</p>
 
 <p>화살표의 오른쪽은 하나의 표현식이나 블럭이 될 수 있습니다. 인자가 하나이고
@@ -1377,7 +1377,7 @@ return handleTextResponse(response);
   catch (expected) {}
 </code></pre>
 
-<p>Tip: 일부 다른 언어와는 달리, 위와 같은 패턴은 <code>fail</code>에서 던져진 오류를 잡기 때문에 동작하지 않습니다. 대신 <code>assertThrows()</code>를 사용하십시오.</p>
+<p>Tip: 일부 다른 언어와는 달리, 위와 같은 패턴은 <code>fail</code>에서 던져진 오류를 잡기 때문에 제대로 동작하지 않습니다. 대신 <code>assertThrows()</code>를 사용하십시오.</p>
 
 <h4 id="features-switch-statements">5.8.3 Switch문</h4>
 
@@ -1408,42 +1408,27 @@ return handleTextResponse(response);
 
 <h3 id="features-this">5.9 this</h3>
 
-<p>Only use <code>this</code> in class constructors and methods, or in arrow functions defined
-within class constructors and methods. Any other uses of <code>this</code> must have an
-explicit <code>@this</code> declared in the immediately-enclosing function&#8217;s JSDoc.</p>
+<p><code>this</code>는 오직 클래스 생성자와 메서드 혹은 그 안의 arrow function 에서만 사용하십시오. 이외의 <code>this</code> 사용은 바로 인접한 함수의 JSDoc에서 명시적인 <code>@this</code> 선언이 있어야 합니다.</p>
 
-<p>Never use <code>this</code> to refer to the global object, the context of an <code>eval</code>, the
-target of an event, or unnecessarily <code>call()</code>ed or <code>apply()</code>ed functions.</p>
+<p>절대로 <code>this</code>를 전역 객체, <code>eval</code>의 컨텍스트, 이벤트의 target, 혹은 불필요하게 <code>call()</code>되거나 <code>apply()</code>된 함수를 참조하는 데에 사용하지 마십시오.b</p>
 
-<h3 id="disallowed-features">5.10 Disallowed features</h3>
+<h3 id="disallowed-features">5.10 허용되지 않는 기능</h3>
 
 <h4 id="disallowed-features-with">5.10.1 with</h4>
 
-<p>Do not use the <code>with</code> keyword.  It makes your code harder to understand and has
-been banned in strict mode since ES5.</p>
+<p><code>with</code> 키워드를 사용하지 마십시오. 코드를 이해하기 어렵게 만들며 ES5의 strict mode에서는 금지됐습니다.</p>
 
-<h4 id="disallowed-features-dynamic-code-evaluation">5.10.2 Dynamic code evaluation</h4>
+<h4 id="disallowed-features-dynamic-code-evaluation">5.10.2 동적 코드 평가 (evaluation)</h4>
 
-<p>Do not use <code>eval</code> or the <code>Function(...string)</code> constructor (except for code
-loaders).  These features are potentially dangerous and simply do not work in
-CSP environments.</p>
+<p>(코드 로더의 경우를 제외하고) <code>eval</code> 혹은 <code>Function(...string)</code> 생성자를 사용하지 마십시오. 이러한 기능들은 잠재적으로 위험하여 CSP 환경에서는 제대로 동작하지 않습니다.</p>
 
-<h4 id="disallowed-features-automatic-semicolon-insertion">5.10.3 Automatic semicolon insertion</h4>
+<h4 id="disallowed-features-automatic-semicolon-insertion">5.10.3 자동 세미콜론 삽입</h4>
 
-<p>Always terminate statements with semicolons (except function and class
-declarations, as noted above).</p>
+<p>(위에 적힌 것 처럼 함수와 클래스 선언을 제외하고)항상 구문을 세미콜론으로 끝내십시오.</p>
 
-<h4 id="disallowed-features-non-standard-features">5.10.4 Non-standard features</h4>
+<h4 id="disallowed-features-non-standard-features">5.10.4 비표준 기능</h4>
 
-<p>Do not use non-standard features.  This includes old features that have been
-removed (e.g., <code>WeakMap.clear</code>), new features that are not yet standardized
-(e.g., the current TC39 working draft, proposals at any stage, or proposed but
-not-yet-complete web standards), or proprietary features that are only
-implemented in some browsers.  Use only features defined in the current ECMA-262
-or WHATWG standards.  (Note that projects writing against specific APIs, such as
-Chrome extensions or Node.js, can obviously use those APIs).  Non-standard
-language &#8220;extensions&#8221; (such as those provided by some external transpilers) are
-forbidden.</p>
+<p>비표준 기능을 사용하지 마십시오. 제거된 오래된 기능들(e.g., <code>WeakMap.clear</code>), 아직 표준화되지 않은 기능들(e.g., 현재 작업중인 TC39 초안, 어떤 단계에 있는 제안 사항, 제안되었지만 아직 완성되지 않은 웹표준),  혹은 일부 브라우저에만 구현된 기능들이 포함됩니다. 현재 ECMA-262 혹은 WHATWG 표준에 정의된 기능만 사용하십시오. (Chrome 확장 혹은 Node.js와 같이 구체적인 API에 대해 작성한 프로젝트는 당연히 그러한 API를 사용할 수 있습니다). (특정한 외부 트랜스파일러와 같은)비표준 언어 "확장"은 금지됩니다.</p>
 
 <h4 id="disallowed-features-wrapper-objects">5.10.5 Wrapper objects for primitive types</h4>
 
