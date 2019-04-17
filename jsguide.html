@@ -1562,37 +1562,32 @@ const {assert, assertInstanceof} = asserts;
 
 <p>템플릿 파라미터 이름은 <code>TYPE</code> 또는 <code>THIS</code>와 같이 간결하고, 한 단어이거나 한 글자 식별자이면서 모두 대문자여야 합니다.</p>
 
-<h3 id="naming-camel-case-defined">6.3 Camel case: defined</h3>
+<h3 id="naming-camel-case-defined">6.3 낙타 표기법: 정의됨</h3>
 
-<p>Sometimes there is more than one reasonable way to convert an English phrase
-into camel case, such as when acronyms or unusual constructs like <q>IPv6</q> or
-<q>iOS</q> are present. To improve predictability, Google Style specifies the
-following (nearly) deterministic scheme.</p>
+<p>두문자(acronym)나 <q>IPv6</q> 또는 <q>iOS</q> 처럼, 때로는 영어 구절l(phrase)을 낙타 표기법으로 바꾸는 둘 이상의 합리적인 방법이 있습니다. 예측 가능성을 높이기 위해 구글 스타일은 다음의 (거의) 결정적인 스키마를 명시합니다.</p>
 
-<p>Beginning with the prose form of the name:</p>
+<p>이름의 산문 형식으로 시작:</p>
 
 <ol>
-<li>Convert the phrase to plain ASCII and remove any apostrophes. For example,
-<q>M&#252;ller's algorithm</q> might become <q>Muellers algorithm</q>.</li>
-<li>Divide this result into words, splitting on spaces and any remaining
-punctuation (typically hyphens).
-<ol>
-<li>Recommended: if any word already has a conventional camel case
-appearance in common usage, split this into its constituent parts (e.g.,
-<q>AdWords</q> becomes <q>ad words</q>). Note that a word such as <q>iOS</q> is not
-really in camel case per se; it defies any convention, so this
-recommendation does not apply.</li>
-</ol></li>
-<li>Now lowercase everything (including acronyms), then uppercase only the first
-character of:
-<ol>
-<li>&#8230; each word, to yield upper camel case, or</li>
-<li>&#8230; each word except the first, to yield lower camel case</li>
-</ol></li>
-<li>Finally, join all the words into a single identifier.</li>
+  <li>구절을 평문 ASCII로 변환하고 아포스트로피를 제거합니다. 예를 들어,
+    <q>M&#252;ller&apos;s algorithm</q>은 <q>Muellers algorithm</q>이 될 수 있습니다.
+  </li>
+  <li>공백이나 남아있는 구두점(주로 하이픈)으로 잘라 단어들로 나눕니다.
+    <ol>
+      <li>Recommended: 단어가 일반적인 사용 방식에서 관례적인 낙타 표기법의 외형을 띤다면, 요소 성분(e.g., <q>AdWords</q>는 <q>ad words</q>)으로 자릅니다. <q>iOS</q>와 같은 다는어는 그 자레초는 진짜 낙타 표기법이 아님을 명심하십시오. 이는 어떤 관례에도 어긋나기 때문에, 이 권장사항은 적용하지 않습니다.</li>
+    </ol>
+  </li>
+  <li>(두문자어를 포함하여) 전부 소문자로 바꿉니다, 그 후 다음의 첫 번째 글자를 대문자로 바꿉니다:
+    <ol>
+      <li>&#8230; upper camel case가 될 각각의 단어, 또는</li>
+      <li>&#8230; lower camel case가 될, 첫 번째를 제외한 각 단어</li>
+    </ol>
+  </li>
+  <li>마지막으로, 모든 단어를 하나의 식별자로 합칩니다.</li>
 </ol>
+<ol>
 
-<p>Note that the casing of the original words is almost entirely disregarded.</p>
+<p>원래 단어의 대소문자 표기는 거의 모두 무시된다는 것을 알아두십시오.</p>
 
 <p>Examples:</p>
 
@@ -1634,9 +1629,9 @@ character of:
 </tbody>
 </table>
 
-<p>*Acceptable, but not recommended.</p>
+<p>*가능하지만 권장되지는 않음.</p>
 
-<p>Note: Some words are ambiguously hyphenated in the English language: for example <q>nonempty</q> and <q>non-empty</q> are both correct, so the method names checkNonempty and checkNonEmpty are likewise both correct.</p>
+<p>Note: 영어에서 특정 단어는 모호하게 하이픈으로 연결돼 있습니다: 예를 들어 <q>nonempty</q>와 <q>non-empty</q>는 둘 다 맞습니다, 때문에 메서드 이름 checkNonempty와 checkNonEmpty는 둘 다 맞습니다.</p>
 
 <h2 id="jsdoc">7 JSDoc</h2>
 
