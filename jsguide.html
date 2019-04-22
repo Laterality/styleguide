@@ -1728,11 +1728,9 @@ class MyClass {
 <p>JavaScript에서 표기 유형에 관한 일반적인 정보는 <a href="https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler">Annotating JavaScript for the Closure Compiler</a>와 <a href="https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System">Types in the Closure Type
  System</a>을 참고하시기 바랍니다.</p>
 
-<h3 id="jsdoc-line-wrapping">7.4 Line wrapping</h3>
+<h3 id="jsdoc-line-wrapping">7.4 줄 바꿈</h3>
 
-<p>Line-wrapped block tags are indented four spaces.  Wrapped description text may
-be lined up with the description on previous lines, but this horizontal
-alignment is discouraged.</p>
+<p>줄바꿈 블럭 태그는 네 칸 들여쓰기합니다. 줄바꿈된 설명 텍스트는 이전 줄에 맞춰 줄세울 수도 있지만, 이 수평 정렬은 권장하지 않습니다.</p>
 
 <pre><code class="language-js prettyprint">/**
  * Illustrates line wrapping for long param/return descriptions.
@@ -1746,16 +1744,11 @@ exports.method = function(foo) {
 };
 </code></pre>
 
-<p>Do not indent when wrapping a <code>@fileoverview</code> description.</p>
+<p><code>@fileoverview</code> 설명을 줄바꿈할 때는 들여쓰기하지 마십시오.</p>
 
-<h3 id="jsdoc-top-file-level-comments">7.5 Top/file-level comments</h3>
+<h3 id="jsdoc-top-file-level-comments">7.5 최상위/파일 수준 주석</h3>
 
-<p>A file may have a top-level file overview. A copyright notice , author information, and
-default <a href="#jsdoc-visibility-annotations">visibility level</a> are optional.  File overviews are generally recommended whenever a
-file consists of more than a single class definition. The top level comment is
-designed to orient readers unfamiliar with the code to what is in this file. If
-present, it may provide a description of the file's contents and any
-dependencies or compatibility information. Wrapped lines are not indented.</p>
+<p>파일은 최상위 파일 개요를 가질 수 있습니다. 저작권 고지, 저자 정보 및 기본 <a href="#jsdoc-visibility-annotations">가시성 수준</a>은 선택사항입니다. 파일 개요는 일반적으로 둘 이상의 단일 클래스 정의로 이루어진 경우에 권장됩니다. 최상위 주석은 코드에 익숙하지 않은 독자들에게 이 파일에 있는 것들이 무엇인지를 알게 하기 위해 설계됩니다. 만약 존재하는 경우, 파일 내용의 설명과 의존성 또는 호환성 정보를 제공할 수 있습니다. 줄바꿈된 줄은 들여쓰기하지 않습니다.</p>
 
 <p>Example:</p>
 
