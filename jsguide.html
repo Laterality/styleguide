@@ -1759,16 +1759,9 @@ exports.method = function(foo) {
  */
 </code></pre>
 
-<h3 id="jsdoc-class-comments">7.6 Class comments</h3>
+<h3 id="jsdoc-class-comments">7.6 클래스 주석</h3>
 
-<p>Classes, interfaces and records must be documented with a description and any
-template parameters, implemented interfaces, visibility, or other appropriate
-tags. The class description should provide the reader with enough information to
-know how and when to use the class, as well as any additional considerations
-necessary to correctly use the class. Textual descriptions may be omitted on the
-constructor. <code>@constructor</code> and <code>@extends</code> annotations are not used with the
-<code>class</code> keyword unless the class is being used to declare an <code>@interface</code> or
-it extends a generic class.</p>
+<p>클래스, 인터페이스 및 레코드는 설명과 함께 템플릿 파라미터, 구현한 인터페이스, 가시성 또는 다른 적절한 태그들로 문서화돼야 합니다. 클래스 설명은 독자에게 클래스를 이해하기 위한 충분한 정보와 언제 사용해야 하는지 뿐만 아니라 클래스를 올바르게 사용하기 위해 필요한 고려사항을 제공해야 합니다. 생성자에서는 본문에 대한 설명이 생략될 수도 있습니다. 클래스가 <code>@interface</code> 선언이나 제네릭 클래스를 확장하는 클래스를 선언하는데 사용되지 않는 이상, <code>@constructor</code>와 <code>@extends</code> 애노테이션은 <code>class</code> 키워드와 함께 사용되지 않습니다.</p>
 
 <pre><code class="language-js prettyprint">/**
  * A fancier event target that does cool things.
