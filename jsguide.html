@@ -1789,11 +1789,9 @@ class Listable {
 }
 </code></pre>
 
-<h3 id="jsdoc-enum-and-typedef-comments">7.7 Enum and typedef comments</h3>
+<h3 id="jsdoc-enum-and-typedef-comments">7.7 enum과 typedef 주석</h3>
 
-<p>Enums and typedefs must be documented.  Public enums and typedefs must have a
-non-empty description.  Individual enum items may be documented with a JSDoc
-comment on the preceding line.</p>
+<p>enum과 typedef는 문서화돼야 합니다. public enum과 typedef에는 (비어있지 않은)설명이 필요합니다. 개별 enum 항목은 앞 줄에 JSDoc으로 문서화될 수도 있습니다.</p>
 
 <pre><code class="language-js prettyprint">/**
  * A useful type union, which is reused often.
@@ -1814,12 +1812,7 @@ const BandersnatchType = {
 };
 </code></pre>
 
-<p>Typedefs are useful for defining short record types, or aliases for unions,
-complex functions, or generic types.
-Typedefs should be avoided for record types with many fields, since they do not
-allow documenting individual fields, nor using templates or recursive
-references.
-For large record types, prefer <code>@record</code>.</p>
+<p>typedef는 짧은 레코드 타입이나 union, 복잡한 함수 또는 제네릭 타입에 대한 별칭을 정의하는 데 유용합니다. typedef는 각각의 필드의 문서화, 템플릿 사용 또는 재귀 참조를 할 수 없기 때문에 필드가 많은 레코드 타입에는 피해야 합니다. 큰 레코드 타입에는 <code>precord</code>를 권장합니다.</p>
 
 <h3 id="jsdoc-method-and-function-comments">7.8 Method and function comments</h3>
 
