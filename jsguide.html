@@ -1814,16 +1814,9 @@ const BandersnatchType = {
 
 <p>typedef는 짧은 레코드 타입이나 union, 복잡한 함수 또는 제네릭 타입에 대한 별칭을 정의하는 데 유용합니다. typedef는 각각의 필드의 문서화, 템플릿 사용 또는 재귀 참조를 할 수 없기 때문에 필드가 많은 레코드 타입에는 피해야 합니다. 큰 레코드 타입에는 <code>precord</code>를 권장합니다.</p>
 
-<h3 id="jsdoc-method-and-function-comments">7.8 Method and function comments</h3>
+<h3 id="jsdoc-method-and-function-comments">7.8 메서드 및 함수 주석</h3>
 
-<p>Parameter and return types must be documented. The <code>this</code> type should be
-documented when necessary. Method, parameter, and return descriptions (but not
-types) may be omitted if they are obvious from the rest of the method&#8217;s JSDoc or
-from its signature. Method descriptions should start with a sentence written in
-the third person declarative voice.  If a method overrides a superclass method,
-it must include an <code>@override</code> annotation.  Overridden methods must include all
-<code>@param</code> and <code>@return</code> annotations if any types are refined, but should omit
-them if the types are all the same.</p>
+<p>파라미터와 반환 타입은 문서화돼야 합니다. <code>this</code> 타입은 필요한 경우 문서화돼는 것이 좋습니다. (타입 외에)메서드, 파라미터 및 반환값에 대한 설명은 메서드 JSDoc의 나머지 부분이나 시그니처에서 명확한 경우 생략할 수 있습니다. 메서드 설명은 3인칭 서술자 형태의 문장으로 시작하는 것이 좋습니다. 메서드가 기반클래스의 메서드를 오버라이드하는 경우, <code>@override</code> 애노테이션을 포함해야 합니다. 오버라이드된 메서드는 인자와 반환 타입이 바뀐 경우 <code>@param</code>와 <code>@return</code> 애노테이션을 포함해야 하지만, 동일한 경우 타입을 생략하는 것이 좋습니다.</p>
 
 <pre><code class="language-js prettyprint">/** This is a class. */
 class SomeClass extends SomeBaseClass {
