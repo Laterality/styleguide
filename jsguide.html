@@ -1845,7 +1845,7 @@ function makeArray(arg) { ... }
 
 
 
-<p>Anonymous functions do not require JSDoc, though parameter types may be specified inline if the automatic type inference is insufficient.</p>
+<p>자동 타입 추론이 충분하지 않은 경우에 파라미터 타입이 인라인으로 명시될 수 있어도, 익명 함수는 JSDoc을 요구하지 않습니다.</p>
 
 <pre><code class="language-js prettyprint">promise.then(
     (/** !Array&lt;number|string&gt; */ items) =&gt; {
@@ -1854,21 +1854,13 @@ function makeArray(arg) { ... }
     });
 </code></pre>
 
-<h3 id="jsdoc-property-comments">7.9 Property comments</h3>
+<h3 id="jsdoc-property-comments">7.9 프로퍼티 주석</h3>
 
-<p>Property types must be documented. The description may be omitted for private
-properties, if name and type provide enough documentation for understanding the
-code.</p>
+<p>프로퍼티 타입은 문서화돼야 합니다. 이름과 타입이 코드를 이해하는 데 충분한 문서화를 제공한다면 private 프로퍼티에는 설명이 생략될 수도 있습니다.</p>
 
-<p>Publicly exported constants are commented the same way as properties.  Explicit
-types may be omitted for <code>@const</code> properties initialized from an expression with
-an obviously known type.</p>
+<p>공개적으로 익스포트된 상수는 프로퍼티와 같은 방법으로 주석을 작성합니다. 명시적인 타입은 명백히 알려진 타입 표현식으로 초기화된 <code>@const</code> 프로퍼티에 대해 생략될 수 있습니다.</p>
 
-<p>Tip: A <code>@const</code> property&#8217;s type can be considered &#8220;obviously known&#8221; if it is
-assigned directly from a constructor parameter with a declared type, or directly
-from a function call with a declared return type.  Non-const properties and
-properties assigned from more complex expressions should have their types
-declared explicitly.</p>
+<p>Tip: <code>@const</code> 프로퍼티의 타입은 선언된 타입과 함께 생성자 파라미터로부터, 또는 선언된 반환 타입과 함께 함수 호출로부터 직접 할당된 경우, &#8220;명백히 알려진&#8221; 것으로 간주될 수 있습니다. 비 상수 프로퍼티와 더 복잡한 표현식으로부터 할당된 프로퍼티는 명시적으로 각자의 타입 선언을 갖는 것이 좋습니다.</p>
 
 <pre><code class="language-js prettyprint">/** My class. */
 class MyClass {
@@ -1889,7 +1881,7 @@ class MyClass {
 }
 
 /**
- * The number of times we'll try before giving up.
+ * The number of times we&apos;ll try before giving up.
  * @const
  */
 MyClass.RETRY_COUNT = 33;
