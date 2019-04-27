@@ -1887,23 +1887,13 @@ class MyClass {
 MyClass.RETRY_COUNT = 33;
 </code></pre>
 
-<h3 id="jsdoc-type-annotations">7.10 Type annotations</h3>
+<h3 id="jsdoc-type-annotations">7.10 타입 애노테이션</h3>
 
-<p>Type annotations are found on <code>@param</code>, <code>@return</code>, <code>@this</code>, and <code>@type</code> tags,
-and optionally on <code>@const</code>, <code>@export</code>, and any visibility tags.  Type
-annotations attached to JSDoc tags must always be enclosed in braces.</p>
+<p>타입 애노테이션은 <code>@param</code>, <code>@return</code>, <code>@this</code> 및 <code>@type</code> 태그와, 선택적으로 <code>@const</code>, <code>@export</code> 및 가시성 태그에서 볼 수 있습니다. JSDoc에 붙은 타입 애노테이션은 항상 중괄호로 둘러싸여야 합니다.</p>
 
-<h4 id="jsdoc-nullability">7.10.1 Nullability</h4>
+<h4 id="jsdoc-nullability">7.10.1 널 가능성</h4>
 
-<p>The type system defines modifiers <code>!</code> and <code>?</code> for non-null and nullable,
-respectively.  Primitive types (<code>undefined</code>, <code>string</code>, <code>number</code>, <code>boolean</code>,
-<code>symbol</code>, and <code>function(...): ...</code>) and record literals (<code>{foo: string, bar:
-number}</code>) are non-null by default.  Do not add an explicit <code>!</code> to these types.
-Object types (<code>Array</code>, <code>Element</code>, <code>MyClass</code>, etc) are nullable by default, but
-cannot be immediately distinguished from a name that is <code>@typedef</code>&#8217;d to a
-non-null-by-default type.  As such, all types except primitives and record
-literals must be annotated explicitly with either <code>?</code> or <code>!</code> to indicate whether
-they are nullable or not.</p>
+<p>타입 시스템은 널이 아닌 경우와 널일 수도 있는 경우에 대해 각각 <code>!</code>와 <code>?</code> 제어자를 정의합니다. 기본 타입(<code>undefined</code>, <code>string</code>, <code>number</code>, <code>boolean</code>, <code>sybmbol</code> 및 <code>function(...): ...</code>)과 레코드 리터럴(<code>{foo: string, bar: number}</code>)은 기본적으로 널이 아닙니다. 이러한 타입에 명시적으로 <code>!</code>를 추가하지 마십시오. 객체 타입(<code>Array</code>, <code>Element</code>, <code>MyClass</code>, etc)는 기본적으로 널일 수 있지만, <code>@typedef</code>된 이름과 기본적으로 널일 수 있는 타입의 이름을 바로 구별할 수는 없습니다. 이와 같이, 기본 타입과 레코드 리터럴을 제외한 모든 타입은 값이 널일 수 있는지 아닌지를 나타내기 위해 명시적으로 <code>?</code> 또는 <code>!</code> 중의 하나로 표기돼야 합니다. </p>
 
 <h4 id="jsdoc-type-casts">7.10.2 Type Casts</h4>
 
