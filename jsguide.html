@@ -1895,19 +1895,16 @@ MyClass.RETRY_COUNT = 33;
 
 <p>타입 시스템은 널이 아닌 경우와 널일 수도 있는 경우에 대해 각각 <code>!</code>와 <code>?</code> 제어자를 정의합니다. 기본 타입(<code>undefined</code>, <code>string</code>, <code>number</code>, <code>boolean</code>, <code>sybmbol</code> 및 <code>function(...): ...</code>)과 레코드 리터럴(<code>{foo: string, bar: number}</code>)은 기본적으로 널이 아닙니다. 이러한 타입에 명시적으로 <code>!</code>를 추가하지 마십시오. 객체 타입(<code>Array</code>, <code>Element</code>, <code>MyClass</code>, etc)는 기본적으로 널일 수 있지만, <code>@typedef</code>된 이름과 기본적으로 널일 수 있는 타입의 이름을 바로 구별할 수는 없습니다. 이와 같이, 기본 타입과 레코드 리터럴을 제외한 모든 타입은 값이 널일 수 있는지 아닌지를 나타내기 위해 명시적으로 <code>?</code> 또는 <code>!</code> 중의 하나로 표기돼야 합니다. </p>
 
-<h4 id="jsdoc-type-casts">7.10.2 Type Casts</h4>
+<h4 id="jsdoc-type-casts">7.10.2 형 변환</h4>
 
-<p>In cases where type checking doesn't accurately infer the type of an expression,
-it is possible to tighten the type by adding a type annotation comment and
-enclosing the expression in parentheses. Note that the parentheses are required.</p>
+<p>타입 검사가 표현식의 타입을 정확하게 추론하지 않는 곳에는, 타입 애노테이션 주석을 추가하고 표현식을 괄호로 감싸서 타입을 명확히 할 수 있습니다. 괄호가 필요하다는 점을 기억하십시오.</p>
 
 <pre><code class="language-js prettyprint">/** @type {number} */ (x)
 </code></pre>
 
-<h4 id="jsdoc-template-parameter-types">7.10.3 Template Parameter Types</h4>
+<h4 id="jsdoc-template-parameter-types">7.10.3 템플릿 파라미터 타입</h4>
 
-<p>Always specify template parameters. This way compiler can do a better job and it
-makes it easier for readers to understand what code does.</p>
+<p>항상 템플릿 파라미터를 명시하십시오. 이렇게 하면 컴파일러가 더 잘 동작하고 독자에게 코드가 무엇을 하는지 이해시키는 것이 더 쉬워집니다.</p>
 
 <p>Bad:</p>
 
@@ -1926,18 +1923,15 @@ const /** !Promise&lt;undefined&gt; */ thisPromiseReturnsNothingButParameterIsSt
 const /** !Object&lt;string, *&gt; */ mapOfEverything = {};
 </code></pre>
 
-<p>Cases when template parameters should not be used:</p>
+<p>템플릿 파라미터가 사용되면 안되는 경우:</p>
 
 <ul>
-<li><code>Object</code> is used for type hierarchy and not as map-like structure.</li>
+<li><code>Object</code>는 타입 계층에 사용되며 맵과 같은 구조로는 사용되지 않습니다.</li>
 </ul>
 
-<h3 id="jsdoc-visibility-annotations">7.11 Visibility annotations</h3>
+<h3 id="jsdoc-visibility-annotations">7.11 가시성 애노테이션</h3>
 
-<p>Visibility annotations (<code>@private</code>, <code>@package</code>, <code>@protected</code>) may be specified
-in a <code>@fileoverview</code> block, or on any exported symbol or property.  Do not
-specify visibility for local variables, whether within a function or at the top
-level of a module.  All <code>@private</code> names must end with an underscore.</p>
+<p>가시성 애노테이션(<code>@private</code>, <code>@package</code>, <code>@protected</code>)은 <code>@fileoverview</code> 블럭, 혹은 익스포트된 기호 또는 프로퍼티에 명시될 수 있습니다. 함수나 모듈의 최상위에 지역 변수에 대한 가시성을 명시하지 마십시오. 모든 <code>@private</code> 이름은 언더스코어로 끝나야 합니다.</p>
 
 <h2 id="policies">8 Policies</h2>
 
